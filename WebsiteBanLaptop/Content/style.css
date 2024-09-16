@@ -130,7 +130,7 @@ body {
 }
 /*hero*/
 #hero {
-    background-image: url(~/img/banner-nen-laptop.png);
+    background-image: url(/img/banner-nen-laptop.png);
     height: 90vh;
     width: 100%;
     background-size: cover;
@@ -162,7 +162,7 @@ body {
     }
 
     #hero button {
-        background-image: url(~/img/button.png);
+        background-image: url(/img/button.png);
         background-color: transparent;
         color: #088178;
         border: 0;
@@ -311,7 +311,7 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-image: url("img/banner/b1.png");
+    background-image: url("/img/banner/b1.png");
     width: 100%;
     height: 40vh;
     background-size: cover;
@@ -345,7 +345,7 @@ body {
     justify-content: space-between;
     flex-wrap: wrap;
     align-items: center;
-    background-image: url("img/banner/letter.webp");
+    background-image: url("/img/banner/letter.webp");
     background-repeat: no-repeat;
     background-position: 20% 30%;
     background-color: #041e42;
@@ -455,7 +455,7 @@ footer {
 
 /*Shop Page*/
 #page-header {
-    background-image: url("img/products/lapban.jpg");
+    background-image: url("/img/products/lapban.jpg");
     width: 100%;
     height: 40vh;
     background-size: cover;
