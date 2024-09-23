@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LayoutIndex.cshtml";
+}
+
+<div class="login-container">
+    <div class="login-box">
+        <h2>Đăng nhập</h2>
+        <form id="loginForm">
+            <div class="input-group">
+                <input type="text" id="username" placeholder="Tên đăng nhập" required>
+            </div>
+            <div class="input-group">
+                <input type="password" id="password" placeholder="Mật khẩu" required>
+            </div>
+            <div class="forgot-password">
+                <a href="#">Quên mật khẩu?</a>
+            </div>
+            <button type="submit" class="login-button">Đăng Nhập Ngay</button>
+        </form>
+        <div class="register">
+            <button class="register-button"><a href="@Url.Action("Register", "Laptop")">Tạo tài khoản mới</a></button>
+        </div>
+    </div>
+</div>
+

@@ -1,12 +1,17 @@
 ﻿<section id="header">
     <a href="@Url.Action("Index", "Laptop")" class="logo"><i class="fas fa-laptop-alt"></i> LAPTOP Store </a>
+    <form action="" class="timkiem">
+        <input type="search" id="search-item" placeholder="Tìm kiếm sản phẩm" onkeyup="search()">
+        <label for="search" class="fas fa-search"></label>
+    </form>
     <div>
         <ul id="navbar">
-            <li><a  href="@Url.Action("Index", "Laptop")">Trang chủ</a></li>
+            <li><a href="@Url.Action("Index", "Laptop")">Trang chủ</a></li>
             <li><a href="@Url.Action("Product", "Laptop")">Sản phẩm</a></li>
             <li><a href="@Url.Action("About", "Laptop")">About</a></li>
             <li><a href="@Url.Action("Contact", "Laptop")">Contact</a></li>
-            <li id="lg-bag"><a href="cart.html"><i class="fas fa-shopping-cart"></i></a></li>
+            <li id="lg-bag"><a href="@Url.Action("Cart", "Laptop")"><i class="fas fa-shopping-cart"></i></a></li>
+            <li><a href="@Url.Action("Login", "Laptop")">Đăng nhập/Đăng kí</a></li>
             <a href="#" id="close"><i class="far fa-times"></i></a>
         </ul>
     </div>

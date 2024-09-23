@@ -1025,6 +1025,8 @@
     <Content Include="Views\Laptop\About.cshtml" />
     <Content Include="Views\Laptop\Contact.cshtml" />
     <Content Include="Views\Shared\_PartialSlider.cshtml" />
+    <Content Include="Views\Laptop\Login.cshtml" />
+    <Content Include="Views\Laptop\Register.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

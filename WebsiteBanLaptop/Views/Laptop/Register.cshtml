@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_LayoutIndex.cshtml";
+}
+
+<div class="container">
+    <div class="register-box">
+        <h2>Đăng Ký Tài Khoản</h2>
+        <form id="registerForm">
+            <div class="input-group">
+                <input type="text" id="username" placeholder="Tên đăng nhập" required>
+            </div>
+            <div class="input-group">
+                <input type="password" id="password" placeholder="Mật khẩu" required>
+            </div>
+            <div class="input-group">
+                <input type="password" id="confirmPassword" placeholder="Nhập lại mật khẩu" required>
+            </div>
+            <div class="input-group">
+                <input type="email" id="email" placeholder="Email" required>
+            </div>
+            <button type="submit" class="register-button">Đăng Ký</button>
+            <p id="errorMessage" style="color: red;"></p>
+        </form>
+    </div>
+</div>
