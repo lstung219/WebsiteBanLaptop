@@ -51,6 +51,8 @@ C:\Users\luuso\source\repos\WebsiteBanLaptop\WebsiteBanLaptop\bin\roslyn\vbc.rsp
 C:\Users\luuso\source\repos\WebsiteBanLaptop\WebsiteBanLaptop\bin\roslyn\VBCSCompiler.exe
 C:\Users\luuso\source\repos\WebsiteBanLaptop\WebsiteBanLaptop\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\luuso\source\repos\WebsiteBanLaptop\WebsiteBanLaptop\bin\Antlr3.Runtime.dll
+C:\Users\luuso\source\repos\WebsiteBanLaptop\WebsiteBanLaptop\bin\EntityFramework.dll
+C:\Users\luuso\source\repos\WebsiteBanLaptop\WebsiteBanLaptop\bin\EntityFramework.SqlServer.dll
 C:\Users\luuso\source\repos\WebsiteBanLaptop\WebsiteBanLaptop\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\luuso\source\repos\WebsiteBanLaptop\WebsiteBanLaptop\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\luuso\source\repos\WebsiteBanLaptop\WebsiteBanLaptop\bin\Newtonsoft.Json.dll
@@ -62,6 +64,8 @@ C:\Users\luuso\source\repos\WebsiteBanLaptop\WebsiteBanLaptop\bin\System.Web.Web
 C:\Users\luuso\source\repos\WebsiteBanLaptop\WebsiteBanLaptop\bin\System.Web.WebPages.dll
 C:\Users\luuso\source\repos\WebsiteBanLaptop\WebsiteBanLaptop\bin\System.Web.WebPages.Razor.dll
 C:\Users\luuso\source\repos\WebsiteBanLaptop\WebsiteBanLaptop\bin\WebGrease.dll
+C:\Users\luuso\source\repos\WebsiteBanLaptop\WebsiteBanLaptop\bin\EntityFramework.xml
+C:\Users\luuso\source\repos\WebsiteBanLaptop\WebsiteBanLaptop\bin\EntityFramework.SqlServer.xml
 C:\Users\luuso\source\repos\WebsiteBanLaptop\WebsiteBanLaptop\bin\System.Web.Helpers.xml
 C:\Users\luuso\source\repos\WebsiteBanLaptop\WebsiteBanLaptop\bin\System.Web.Mvc.xml
 C:\Users\luuso\source\repos\WebsiteBanLaptop\WebsiteBanLaptop\bin\System.Web.Optimization.xml
@@ -77,7 +81,3 @@ C:\Users\luuso\source\repos\WebsiteBanLaptop\WebsiteBanLaptop\obj\Debug\WebsiteB
 C:\Users\luuso\source\repos\WebsiteBanLaptop\WebsiteBanLaptop\obj\Debug\WebsiteB.1BDC68C5.Up2Date
 C:\Users\luuso\source\repos\WebsiteBanLaptop\WebsiteBanLaptop\obj\Debug\WebsiteBanLaptop.dll
 C:\Users\luuso\source\repos\WebsiteBanLaptop\WebsiteBanLaptop\obj\Debug\WebsiteBanLaptop.pdb
-C:\Users\luuso\source\repos\WebsiteBanLaptop\WebsiteBanLaptop\bin\EntityFramework.dll
-C:\Users\luuso\source\repos\WebsiteBanLaptop\WebsiteBanLaptop\bin\EntityFramework.SqlServer.dll
-C:\Users\luuso\source\repos\WebsiteBanLaptop\WebsiteBanLaptop\bin\EntityFramework.xml
-C:\Users\luuso\source\repos\WebsiteBanLaptop\WebsiteBanLaptop\bin\EntityFramework.SqlServer.xml

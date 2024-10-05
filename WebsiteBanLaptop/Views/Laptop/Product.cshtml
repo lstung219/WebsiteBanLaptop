@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<WebsiteBanLaptop.Models.SANPHAM>
 @{
     ViewBag.Title = "Product";
     Layout = "~/Views/Shared/_LayoutIndex.cshtml";
@@ -9,171 +9,51 @@
 </section>
 <section id="product1" class="section-p1">
     <div class="pro_container" id="pro_container">
-        <div class="pro">
-            <img src="/img/products/lap13.png" alt="">
-            <div class="des">
-                <span>ASUS</span>
-                <h5>Laptop ASUS Gaming VivoBook K3605ZF-RP634W</h5>
-                <h4>17.990.000vnđ</h4>
+        @foreach (var item in Model)
+        {
+            <div class="pro">
+                <img src="~/img/products/@item.HINHANH" alt="">
+                <div class="des">
+                    <span>@item.THUONGHIEU.TENTH</span>
+                    <h5><a href="@Url.Action("ChiTietSP","Laptop", new { id =item.MASP})">@item.TENSP</a></h5>
+                    <h4>@Html.FormatValue(item.GIA, "{0:#,##0}") VNĐ</h4>
+                </div>
+                <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
             </div>
-            <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-        </div>
+        }
 
-        <div class="pro">
-            <img src="/img/products/lap14.png" alt="">
-            <div class="des">
-                <span>MSI</span>
-                <h5>Laptop MSI Gaming Thin 15 B13UC-2081VN</h5>
-                <h4>18.490.000vnđ</h4>
-            </div>
-            <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-        </div>
-
-        <div class="pro">
-            <img src="/img/products/lap15.png" alt="">
-            <div class="des">
-                <span>ASUS</span>
-                <h5>Laptop ASUS Vivobook 15 X1504ZA-NJ517W</h5>
-                <h4>14.490.000vnđ</h4>
-            </div>
-            <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-        </div>
-
-        <div class="pro">
-            <img src="/img/products/lap16.png" alt="">
-            <div class="des">
-                <span>Acer</span>
-                <h5>Laptop Acer Aspire 7 A715-76G-5806</h5>
-                <h4>18.990.000vnđ</h4>
-            </div>
-            <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-        </div>
-
-        <div class="pro">
-            <img src="/img/products/lap17.png" alt="">
-            <div class="des">
-                <span>MacBook</span>
-                <h5>Apple MacBook Air M2 2022 16GB 512GB I Chính hãng Apple Việt Nam</h5>
-                <h4>33.590.000vnđ</h4>
-            </div>
-            <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-        </div>
-
-        <div class="pro">
-            <img src="/img/products/lap9.png" alt="">
-            <div class="des">
-                <span>MSI</span>
-                <h5>Laptop MSI Gaming Thin 15 B12UCX-1419VN</h5>
-                <h4>15.490.000vnđ</h4>
-            </div>
-            <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-        </div>
-        <div class="pro">
-            <img src="/img/products/lap10.png" alt="">
-            <div class="des">
-                <span>Lenovo</span>
-                <h5>Laptop Lenovo IdeaPad Slim 3 14IAH8 83EQ0005VN</h5>
-                <h4>14.490.000vnđ</h4>
-            </div>
-            <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-        </div>
-
-        <div class="pro">
-            <img src="/img/products/lap11.png" alt="">
-            <div class="des">
-                <span>HP</span>
-                <h5>Laptop HP Pavilion 15-EG3111TU 8U6L8PA</h5>
-                <h4>17.690.000vnđ</h4>
-            </div>
-            <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-        </div>
-        <div class="pro" onclick=window.location.href ='sproduct.html'>
-            <img src="/img/products/lap1.png" alt="">
-            <div class="des">
-                <span>MSI</span>
-                <h5>Laptop MSI Gaming Thin 15 B13UC-2081VN</h5>
-                <h4>18.490.000vnđ</h4>
-            </div>
-            <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-        </div>
-
-        <div class="pro" onclick=window.location.href ='s2.html'>
-            <img src="/img/products/lap2.png" alt="">
-            <div class="des">
-                <span>Acer</span>
-                <h5>Laptop Acer Gaming Aspire 5 A515-58GM-53PZ</h5>
-                <h4>15.990.000vnđ</h4>
-            </div>
-            <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-        </div>
-
-        <div class="pro">
-            <img src="/img/products/lap3.png" alt="">
-            <div class="des">
-                <span>Asus</span>
-                <h5>Laptop ASUS Vivobook 14 OLED A1405ZA-KM264W</h5>
-                <h4>16.490.000vnđ</h4>
-            </div>
-            <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-        </div>
-
-        <div class="pro">
-            <img src="/img/products/lap4.png" alt="">
-            <div class="des">
-                <span>Acer</span>
-                <h5>Laptop Acer Aspire 3 A314-42P-R3B3 NX.KSFSV.001</h5>
-                <h4>11.790.000vnđ</h4>
-            </div>
-            <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-        </div>
-
-        <div class="pro">
-            <img src="/img/products/lap5.png" alt="">
-            <div class="des">
-                <span>Lenovo</span>
-                <h5>Laptop Lenovo LOQ 15IAX9 83GS001SVN</h5>
-                <h4>18.690.000vnđ</h4>
-            </div>
-            <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-        </div>
-
-        <div class="pro">
-            <img src="/img/products/lap6.png" alt="">
-            <div class="des">
-                <span>Acer</span>
-                <h5>Laptop Gaming Acer Nitro 5 Tiger AN515 58 52SP</h5>
-                <h4>19.990.000vnđ</h4>
-            </div>
-            <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-        </div>
-        <div class="pro">
-            <img src="/img/products/lap7.png" alt="">
-            <div class="des">
-                <span>Dell</span>
-                <h5>Laptop Dell Inspiron 15 3520</h5>
-                <h4>16.490.000vnđ</h4>
-            </div>
-            <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-        </div>
-
-        <div class="pro">
-            <img src="/img/products/lap8.png" alt="">
-            <div class="des">
-                <span>Asus</span>
-                <h5>
-                    Laptop ASUS TUF Gaming F15 FX507ZC4-HN095W
-                </h5>
-                <h4>20.490.000vnđ</h4>
-            </div>
-            <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-        </div>
     </div>
 </section>
 
 <section id="pagination" class="section-p1">
-    <a href="#">1</a>
-    <a href="#">2</a>
-    <a href="#"><i class="fal fa-long-arrow-alt-right"></i></a>
+    @if (ViewBag.TotalPages > 1)
+    {
+        <a href="@Url.Action("Product", new { page = 1 })">First</a>
+
+        if (ViewBag.CurrentPage > 1)
+        {
+            <a href="@Url.Action("Product", new { page = ViewBag.CurrentPage - 1 })">Previous</a>
+        }
+
+        for (int i = 1; i <= ViewBag.TotalPages; i++)
+        {
+            if (i == ViewBag.CurrentPage)
+            {
+                <strong>@i</strong> <!-- Trang hiện tại được in đậm -->
+            }
+            else
+            {
+                <a href="@Url.Action("Product", new { page = i })">@i</a>
+            }
+        }
+
+        if (ViewBag.CurrentPage < ViewBag.TotalPages)
+        {
+            <a href="@Url.Action("Product", new { page = ViewBag.CurrentPage + 1 })">Next</a>
+        }
+
+        <a href="@Url.Action("Product", new { page = ViewBag.TotalPages })">Last</a>
+    }
 </section>
 
 

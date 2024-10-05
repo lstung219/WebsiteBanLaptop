@@ -916,9 +916,13 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="img\about\1.webp" />
+    <Content Include="img\anh" />
     <Content Include="img\banner-nen-laptop.png" />
     <Content Include="img\banner\b1.png" />
+    <Content Include="img\banner\b2.webp" />
     <Content Include="img\banner\b3.jpg" />
+    <Content Include="img\banner\letter.webp" />
     <Content Include="img\banner\shop-page.jpg" />
     <Content Include="img\button.png" />
     <Content Include="img\img1.png" />
@@ -946,6 +950,21 @@
     <Content Include="img\products\lap8.png" />
     <Content Include="img\products\lap9.png" />
     <Content Include="img\products\lapban.jpg" />
+    <Content Include="img\products\SP1.jpg" />
+    <Content Include="img\products\SP10.jpg" />
+    <Content Include="img\products\SP11.jpg" />
+    <Content Include="img\products\SP12.jpg" />
+    <Content Include="img\products\SP13.jpg" />
+    <Content Include="img\products\SP14.jpg" />
+    <Content Include="img\products\SP2.jpg" />
+    <Content Include="img\products\SP3.jpg" />
+    <Content Include="img\products\SP4.jpg" />
+    <Content Include="img\products\SP5.jpg" />
+    <Content Include="img\products\SP6.jpg" />
+    <Content Include="img\products\SP7.jpg" />
+    <Content Include="img\products\SP8.jpg" />
+    <Content Include="img\products\SP9.jpg" />
+    <Content Include="img\user.jpg" />
     <Content Include="Models\Laptop.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Laptop.Context.cs</LastGenOutput>
@@ -962,10 +981,6 @@
     <Content Include="Scripts\bootstrap.esm.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="img\about\1.webp" />
-    <Content Include="img\anh" />
-    <Content Include="img\banner\b2.webp" />
-    <Content Include="img\banner\letter.webp" />
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Content\assets\css\style.css.map" />
     <Content Include="Content\assets\fonts\rubik\Rubik-Bold.eot" />
@@ -1109,6 +1124,7 @@
     <Content Include="Views\Shared\_PartialSlider.cshtml" />
     <Content Include="Views\Laptop\Login.cshtml" />
     <Content Include="Views\Laptop\Register.cshtml" />
+    <Content Include="Views\Laptop\ChiTietSP.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

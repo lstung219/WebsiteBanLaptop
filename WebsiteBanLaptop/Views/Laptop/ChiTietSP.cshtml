@@ -1,0 +1,88 @@
+﻿
+@{
+    ViewBag.Title = "ChiTietSP";
+    Layout = "~/Views/Shared/_LayoutIndex.cshtml";
+}
+
+<section id="prodetails" class="section-p1">
+    <div class="single-pro-image">
+        <img src="~/img/products/@Model.HINHANH" width="100%" id="MainImg" alt="">
+
+        <div class="small-img-group">
+            <div class="small-img-col">
+                <img src="~/img/products/img2.png" width="100%" class="small-img" alt="">
+            </div>
+            <div class="small-img-col">
+                <img src="~/img/products/img2-1.png" width="100%" class="small-img" alt="">
+            </div>
+            <div class="small-img-col">
+                <img src="~/img/products/img2-2.png" width="100%" class="small-img" alt="">
+            </div>
+            <div class="small-img-col">
+                <img src="~/img/products/img2-3.png" width="100%" class="small-img" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="single-pro-details">
+        <h6>Home/LAPTOP</h6>
+        <h4>@Model.TENSP</h4>
+        <span class="text-danger">@Html.FormatValue(@Model.GIA, "{0:#,##0}") VND</span>
+
+
+        <input type="number" value="1">
+        <button class="normal">Thêm vào giỏ hàng</button>
+        <h4>Mô tả sản phẩm</h4>
+        <span>
+            @Model.MOTA
+        </span>
+    </div>
+</section>
+
+<section id="product1" class="section-p1">
+    <h2>SẢN PHẨM MỚI</h2>
+    <p>Sản phẩm chính hảng, đổi trả trong vòng 7 ngày</p>
+    <div class="pro_container">
+
+        <div class="pro">
+            <img src="~/img/products/img14.jpg" alt="">
+            <div class="des">
+                <span>Sony</span>
+                <h5>Tai nghe Bluetooth True Wireless Sony WF-C500</h5>
+                <h4>2,290,000vnđ</h4>
+            </div>
+            <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+        </div>
+
+        <div class="pro">
+            <img src="~/img/products/img15.jpeg" alt="">
+            <div class="des">
+                <span>Beats</span>
+                <h5>Tai nghe Bluetooth Beats High-Performance</h5>
+                <h4>3,190,000vnđ</h4>
+            </div>
+            <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+        </div>
+        <div class="pro">
+            <img src="~/img/products/img16.png" alt="">
+            <div class="des">
+                <span>Corsair</span>
+                <h5>Tai nghe Corsair HS70 Pro Wireless Carbon</h5>
+                <h4>1,790,000vnđ</h4>
+            </div>
+            <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+        </div>
+
+        <div class="pro">
+            <img src="~/img/products/img17.png" alt="">
+            <div class="des">
+                <span>Asus</span>
+                <h5>Tai nghe Asus ROG Cetra II Core</h5>
+                <h4>890,000vnđ</h4>
+            </div>
+            <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+        </div>
+
+    </div>
+</section>
+
