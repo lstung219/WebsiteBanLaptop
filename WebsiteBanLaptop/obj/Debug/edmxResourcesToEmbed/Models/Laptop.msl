@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="db_LAPTOPSTORESModelStoreContainer" CdmEntityContainer="db_LAPTOPSTORESEntities">
+    <EntitySetMapping Name="ADDMINs">
+      <EntityTypeMapping TypeName="db_LAPTOPSTORESModel.ADDMIN">
+        <MappingFragment StoreEntitySet="ADDMIN">
+          <ScalarProperty Name="MAAD" ColumnName="MAAD" />
+          <ScalarProperty Name="HOTEN" ColumnName="HOTEN" />
+          <ScalarProperty Name="GMAIL" ColumnName="GMAIL" />
+          <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+          <ScalarProperty Name="PASS" ColumnName="PASS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CAUHINHs">
+      <EntityTypeMapping TypeName="db_LAPTOPSTORESModel.CAUHINH">
+        <MappingFragment StoreEntitySet="CAUHINH">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="HDH" ColumnName="HDH" />
+          <ScalarProperty Name="CPU" ColumnName="CPU" />
+          <ScalarProperty Name="RAM" ColumnName="RAM" />
+          <ScalarProperty Name="OCUNG" ColumnName="OCUNG" />
+          <ScalarProperty Name="CARDDOHOA" ColumnName="CARDDOHOA" />
+          <ScalarProperty Name="MANHINH" ColumnName="MANHINH" />
+          <ScalarProperty Name="PIN" ColumnName="PIN" />
+          <ScalarProperty Name="TRONGLUONG" ColumnName="TRONGLUONG" />
+          <ScalarProperty Name="KETNOIMANG" ColumnName="KETNOIMANG" />
+          <ScalarProperty Name="BANPHIM" ColumnName="BANPHIM" />
+          <ScalarProperty Name="BAOHANH" ColumnName="BAOHANH" />
+          <ScalarProperty Name="MASP" ColumnName="MASP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CTGIOHANGs">
+      <EntityTypeMapping TypeName="db_LAPTOPSTORESModel.CTGIOHANG">
+        <MappingFragment StoreEntitySet="CTGIOHANG">
+          <ScalarProperty Name="MACTGH" ColumnName="MACTGH" />
+          <ScalarProperty Name="MAGH" ColumnName="MAGH" />
+          <ScalarProperty Name="MASP" ColumnName="MASP" />
+          <ScalarProperty Name="NGAYTHEM" ColumnName="NGAYTHEM" />
+          <ScalarProperty Name="SL" ColumnName="SL" />
+          <ScalarProperty Name="GIA" ColumnName="GIA" />
+          <ScalarProperty Name="TONGTIEN" ColumnName="TONGTIEN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DONHANGs">
+      <EntityTypeMapping TypeName="db_LAPTOPSTORESModel.DONHANG">
+        <MappingFragment StoreEntitySet="DONHANG">
+          <ScalarProperty Name="MADH" ColumnName="MADH" />
+          <ScalarProperty Name="NGAYDAT" ColumnName="NGAYDAT" />
+          <ScalarProperty Name="SL" ColumnName="SL" />
+          <ScalarProperty Name="GIA" ColumnName="GIA" />
+          <ScalarProperty Name="TONGTIEN" ColumnName="TONGTIEN" />
+          <ScalarProperty Name="TRANGTHAIDH" ColumnName="TRANGTHAIDH" />
+          <ScalarProperty Name="MASP" ColumnName="MASP" />
+          <ScalarProperty Name="MAKH" ColumnName="MAKH" />
+          <ScalarProperty Name="MAQL" ColumnName="MAQL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FEEDBACKs">
+      <EntityTypeMapping TypeName="db_LAPTOPSTORESModel.FEEDBACK">
+        <MappingFragment StoreEntitySet="FEEDBACK">
+          <ScalarProperty Name="MAFB" ColumnName="MAFB" />
+          <ScalarProperty Name="NGAYFB" ColumnName="NGAYFB" />
+          <ScalarProperty Name="NOIDUNG" ColumnName="NOIDUNG" />
+          <ScalarProperty Name="RATING" ColumnName="RATING" />
+          <ScalarProperty Name="MAKH" ColumnName="MAKH" />
+          <ScalarProperty Name="MAQL" ColumnName="MAQL" />
+          <ScalarProperty Name="MASP" ColumnName="MASP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GIOHANGs">
+      <EntityTypeMapping TypeName="db_LAPTOPSTORESModel.GIOHANG">
+        <MappingFragment StoreEntitySet="GIOHANG">
+          <ScalarProperty Name="MAGH" ColumnName="MAGH" />
+          <ScalarProperty Name="MAKH" ColumnName="MAKH" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KHACHHANGs">
+      <EntityTypeMapping TypeName="db_LAPTOPSTORESModel.KHACHHANG">
+        <MappingFragment StoreEntitySet="KHACHHANG">
+          <ScalarProperty Name="MAKH" ColumnName="MAKH" />
+          <ScalarProperty Name="HOTEN" ColumnName="HOTEN" />
+          <ScalarProperty Name="NGAYSINH" ColumnName="NGAYSINH" />
+          <ScalarProperty Name="GIOITINH" ColumnName="GIOITINH" />
+          <ScalarProperty Name="DIACHI" ColumnName="DIACHI" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+          <ScalarProperty Name="GMAIL" ColumnName="GMAIL" />
+          <ScalarProperty Name="NGAYDK" ColumnName="NGAYDK" />
+          <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+          <ScalarProperty Name="PASS" ColumnName="PASS" />
+          <ScalarProperty Name="MAQL" ColumnName="MAQL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LOAISPs">
+      <EntityTypeMapping TypeName="db_LAPTOPSTORESModel.LOAISP">
+        <MappingFragment StoreEntitySet="LOAISP">
+          <ScalarProperty Name="MAL" ColumnName="MAL" />
+          <ScalarProperty Name="TENLOAI" ColumnName="TENLOAI" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRODUCTIMAGEs">
+      <EntityTypeMapping TypeName="db_LAPTOPSTORESModel.PRODUCTIMAGE">
+        <MappingFragment StoreEntitySet="PRODUCTIMAGE">
+          <ScalarProperty Name="MAHA" ColumnName="MAHA" />
+          <ScalarProperty Name="HA" ColumnName="HA" />
+          <ScalarProperty Name="MASP" ColumnName="MASP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QUANLies">
+      <EntityTypeMapping TypeName="db_LAPTOPSTORESModel.QUANLY">
+        <MappingFragment StoreEntitySet="QUANLY">
+          <ScalarProperty Name="MAQL" ColumnName="MAQL" />
+          <ScalarProperty Name="HOTEN" ColumnName="HOTEN" />
+          <ScalarProperty Name="GMAIL" ColumnName="GMAIL" />
+          <ScalarProperty Name="VAITRO" ColumnName="VAITRO" />
+          <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+          <ScalarProperty Name="PASS" ColumnName="PASS" />
+          <ScalarProperty Name="MAAD" ColumnName="MAAD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SANPHAMs">
+      <EntityTypeMapping TypeName="db_LAPTOPSTORESModel.SANPHAM">
+        <MappingFragment StoreEntitySet="SANPHAM">
+          <ScalarProperty Name="MASP" ColumnName="MASP" />
+          <ScalarProperty Name="TENSP" ColumnName="TENSP" />
+          <ScalarProperty Name="GIA" ColumnName="GIA" />
+          <ScalarProperty Name="SLTON" ColumnName="SLTON" />
+          <ScalarProperty Name="SLBAN" ColumnName="SLBAN" />
+          <ScalarProperty Name="MOTA" ColumnName="MOTA" />
+          <ScalarProperty Name="DISCOUNT" ColumnName="DISCOUNT" />
+          <ScalarProperty Name="THOIGIAN" ColumnName="THOIGIAN" />
+          <ScalarProperty Name="GIADAGIAM" ColumnName="GIADAGIAM" />
+          <ScalarProperty Name="HINHANH" ColumnName="HINHANH" />
+          <ScalarProperty Name="MAQL" ColumnName="MAQL" />
+          <ScalarProperty Name="MATH" ColumnName="MATH" />
+          <ScalarProperty Name="MAL" ColumnName="MAL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="THUONGHIEUx">
+      <EntityTypeMapping TypeName="db_LAPTOPSTORESModel.THUONGHIEU">
+        <MappingFragment StoreEntitySet="THUONGHIEU">
+          <ScalarProperty Name="MATH" ColumnName="MATH" />
+          <ScalarProperty Name="TENTH" ColumnName="TENTH" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

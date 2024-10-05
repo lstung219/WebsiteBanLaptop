@@ -45,10 +45,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -121,12 +129,64 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
-    <Compile Include="Areas\Admin\Controllers\AdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\QuanLyController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LaptopController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ADDMIN.cs">
+      <DependentUpon>Laptop.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CAUHINH.cs">
+      <DependentUpon>Laptop.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CTGIOHANG.cs">
+      <DependentUpon>Laptop.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DONHANG.cs">
+      <DependentUpon>Laptop.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FEEDBACK.cs">
+      <DependentUpon>Laptop.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GIOHANG.cs">
+      <DependentUpon>Laptop.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\KHACHHANG.cs">
+      <DependentUpon>Laptop.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Laptop.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Laptop.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Laptop.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Laptop.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Laptop.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Laptop.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LOAISP.cs">
+      <DependentUpon>Laptop.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PRODUCTIMAGE.cs">
+      <DependentUpon>Laptop.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\QUANLY.cs">
+      <DependentUpon>Laptop.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SANPHAM.cs">
+      <DependentUpon>Laptop.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\THUONGHIEU.cs">
+      <DependentUpon>Laptop.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\DashboardViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -852,6 +912,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\StyleSheet1.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -885,6 +946,16 @@
     <Content Include="img\products\lap8.png" />
     <Content Include="img\products\lap9.png" />
     <Content Include="img\products\lapban.jpg" />
+    <Content Include="Models\Laptop.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Laptop.Context.cs</LastGenOutput>
+      <DependentUpon>Laptop.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\Laptop.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Laptop.edmx</DependentUpon>
+      <LastGenOutput>Laptop.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -896,7 +967,6 @@
     <Content Include="img\banner\b2.webp" />
     <Content Include="img\banner\letter.webp" />
     <Content Include="Areas\Admin\Views\web.config" />
-    <Content Include="Areas\Admin\Views\Admin\Admin.cshtml" />
     <Content Include="Content\assets\css\style.css.map" />
     <Content Include="Content\assets\fonts\rubik\Rubik-Bold.eot" />
     <Content Include="Content\assets\fonts\rubik\Rubik-Bold.ttf" />
@@ -991,6 +1061,18 @@
     <Content Include="Content\assets\vendors\mdi\fonts\materialdesignicons-webfont.ttf" />
     <Content Include="Content\assets\vendors\mdi\fonts\materialdesignicons-webfont.woff" />
     <Content Include="Content\assets\vendors\mdi\fonts\materialdesignicons-webfont.woff2" />
+    <EntityDeploy Include="Models\Laptop.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Laptop.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Laptop.edmx.diagram">
+      <DependentUpon>Laptop.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\Admin\Views\Shared\_LayoutAdmin.cshtml" />
+    <Content Include="Areas\Admin\Views\QuanLy\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\QuanLy\Product.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_PartialNav.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_PartialTopbar.cshtml" />
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />
@@ -1031,8 +1113,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
-    <Folder Include="Areas\Admin\Views\Shared\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
@@ -1060,6 +1140,9 @@
     <Content Include="Scripts\bootstrap.bundle.js.map" />
     <Content Include="Scripts\jquery-3.7.0.slim.min.map" />
     <Content Include="Scripts\jquery-3.7.0.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,0 +1,1049 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="db_LAPTOPSTORESModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ADDMIN">
+          <Key>
+            <PropertyRef Name="MAAD" />
+          </Key>
+          <Property Name="MAAD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HOTEN" Type="nvarchar" MaxLength="50" />
+          <Property Name="GMAIL" Type="nvarchar" MaxLength="100" />
+          <Property Name="USERNAME" Type="nvarchar" MaxLength="30" />
+          <Property Name="PASS" Type="nvarchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="CAUHINH">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HDH" Type="nvarchar(max)" />
+          <Property Name="CPU" Type="nvarchar(max)" />
+          <Property Name="RAM" Type="nvarchar(max)" />
+          <Property Name="OCUNG" Type="nvarchar(max)" />
+          <Property Name="CARDDOHOA" Type="nvarchar(max)" />
+          <Property Name="MANHINH" Type="nvarchar(max)" />
+          <Property Name="PIN" Type="nvarchar(max)" />
+          <Property Name="TRONGLUONG" Type="nvarchar(max)" />
+          <Property Name="KETNOIMANG" Type="nvarchar(max)" />
+          <Property Name="BANPHIM" Type="nvarchar(max)" />
+          <Property Name="BAOHANH" Type="nvarchar" MaxLength="20" />
+          <Property Name="MASP" Type="int" />
+        </EntityType>
+        <EntityType Name="CTGIOHANG">
+          <Key>
+            <PropertyRef Name="MACTGH" />
+          </Key>
+          <Property Name="MACTGH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MAGH" Type="int" />
+          <Property Name="MASP" Type="int" />
+          <Property Name="NGAYTHEM" Type="date" />
+          <Property Name="SL" Type="int" />
+          <Property Name="GIA" Type="float" />
+          <Property Name="TONGTIEN" Type="float" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="DONHANG">
+          <Key>
+            <PropertyRef Name="MADH" />
+          </Key>
+          <Property Name="MADH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NGAYDAT" Type="datetime" />
+          <Property Name="SL" Type="int" />
+          <Property Name="GIA" Type="float" />
+          <Property Name="TONGTIEN" Type="float" />
+          <Property Name="TRANGTHAIDH" Type="nvarchar" MaxLength="30" />
+          <Property Name="MASP" Type="int" />
+          <Property Name="MAKH" Type="int" />
+          <Property Name="MAQL" Type="int" />
+        </EntityType>
+        <EntityType Name="FEEDBACK">
+          <Key>
+            <PropertyRef Name="MAFB" />
+          </Key>
+          <Property Name="MAFB" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NGAYFB" Type="datetime" />
+          <Property Name="NOIDUNG" Type="nvarchar" MaxLength="200" />
+          <Property Name="RATING" Type="int" />
+          <Property Name="MAKH" Type="int" />
+          <Property Name="MAQL" Type="int" />
+          <Property Name="MASP" Type="int" />
+        </EntityType>
+        <EntityType Name="GIOHANG">
+          <Key>
+            <PropertyRef Name="MAGH" />
+          </Key>
+          <Property Name="MAGH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MAKH" Type="int" />
+        </EntityType>
+        <EntityType Name="KHACHHANG">
+          <Key>
+            <PropertyRef Name="MAKH" />
+          </Key>
+          <Property Name="MAKH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HOTEN" Type="nvarchar" MaxLength="50" />
+          <Property Name="NGAYSINH" Type="datetime" />
+          <Property Name="GIOITINH" Type="nvarchar" MaxLength="3" />
+          <Property Name="DIACHI" Type="nvarchar" MaxLength="100" />
+          <Property Name="SDT" Type="nvarchar" MaxLength="11" />
+          <Property Name="GMAIL" Type="nvarchar" MaxLength="100" />
+          <Property Name="NGAYDK" Type="datetime" />
+          <Property Name="USERNAME" Type="nvarchar" MaxLength="30" />
+          <Property Name="PASS" Type="nvarchar" MaxLength="30" />
+          <Property Name="MAQL" Type="int" />
+        </EntityType>
+        <EntityType Name="LOAISP">
+          <Key>
+            <PropertyRef Name="MAL" />
+          </Key>
+          <Property Name="MAL" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TENLOAI" Type="nvarchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="PRODUCTIMAGE">
+          <Key>
+            <PropertyRef Name="MAHA" />
+          </Key>
+          <Property Name="MAHA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HA" Type="nvarchar" MaxLength="20" />
+          <Property Name="MASP" Type="int" />
+        </EntityType>
+        <EntityType Name="QUANLY">
+          <Key>
+            <PropertyRef Name="MAQL" />
+          </Key>
+          <Property Name="MAQL" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HOTEN" Type="nvarchar" MaxLength="50" />
+          <Property Name="GMAIL" Type="nvarchar" MaxLength="100" />
+          <Property Name="VAITRO" Type="nvarchar" MaxLength="20" />
+          <Property Name="USERNAME" Type="nvarchar" MaxLength="30" />
+          <Property Name="PASS" Type="nvarchar" MaxLength="30" />
+          <Property Name="MAAD" Type="int" />
+        </EntityType>
+        <EntityType Name="SANPHAM">
+          <Key>
+            <PropertyRef Name="MASP" />
+          </Key>
+          <Property Name="MASP" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TENSP" Type="nvarchar" MaxLength="100" />
+          <Property Name="GIA" Type="float" />
+          <Property Name="SLTON" Type="int" />
+          <Property Name="SLBAN" Type="int" />
+          <Property Name="MOTA" Type="nvarchar(max)" />
+          <Property Name="DISCOUNT" Type="int" />
+          <Property Name="THOIGIAN" Type="datetime" />
+          <Property Name="GIADAGIAM" Type="float" />
+          <Property Name="HINHANH" Type="nvarchar" MaxLength="20" />
+          <Property Name="MAQL" Type="int" />
+          <Property Name="MATH" Type="int" />
+          <Property Name="MAL" Type="int" />
+        </EntityType>
+        <EntityType Name="THUONGHIEU">
+          <Key>
+            <PropertyRef Name="MATH" />
+          </Key>
+          <Property Name="MATH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TENTH" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <Association Name="FK__CAUHINH__MASP__47DBAE45">
+          <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="0..1" />
+          <End Role="CAUHINH" Type="Self.CAUHINH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SANPHAM">
+              <PropertyRef Name="MASP" />
+            </Principal>
+            <Dependent Role="CAUHINH">
+              <PropertyRef Name="MASP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CTGIOHANG__MAGH__4D94879B">
+          <End Role="GIOHANG" Type="Self.GIOHANG" Multiplicity="0..1" />
+          <End Role="CTGIOHANG" Type="Self.CTGIOHANG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GIOHANG">
+              <PropertyRef Name="MAGH" />
+            </Principal>
+            <Dependent Role="CTGIOHANG">
+              <PropertyRef Name="MAGH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CTGIOHANG__MASP__4E88ABD4">
+          <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="0..1" />
+          <End Role="CTGIOHANG" Type="Self.CTGIOHANG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SANPHAM">
+              <PropertyRef Name="MASP" />
+            </Principal>
+            <Dependent Role="CTGIOHANG">
+              <PropertyRef Name="MASP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DONHANG__MAKH__5165187F">
+          <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="0..1" />
+          <End Role="DONHANG" Type="Self.DONHANG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KHACHHANG">
+              <PropertyRef Name="MAKH" />
+            </Principal>
+            <Dependent Role="DONHANG">
+              <PropertyRef Name="MAKH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DONHANG__MAQL__52593CB8">
+          <End Role="QUANLY" Type="Self.QUANLY" Multiplicity="0..1" />
+          <End Role="DONHANG" Type="Self.DONHANG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="QUANLY">
+              <PropertyRef Name="MAQL" />
+            </Principal>
+            <Dependent Role="DONHANG">
+              <PropertyRef Name="MAQL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DONHANG__MASP__534D60F1">
+          <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="0..1" />
+          <End Role="DONHANG" Type="Self.DONHANG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SANPHAM">
+              <PropertyRef Name="MASP" />
+            </Principal>
+            <Dependent Role="DONHANG">
+              <PropertyRef Name="MASP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__FEEDBACK__MAKH__571DF1D5">
+          <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="0..1" />
+          <End Role="FEEDBACK" Type="Self.FEEDBACK" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KHACHHANG">
+              <PropertyRef Name="MAKH" />
+            </Principal>
+            <Dependent Role="FEEDBACK">
+              <PropertyRef Name="MAKH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__FEEDBACK__MAQL__5812160E">
+          <End Role="QUANLY" Type="Self.QUANLY" Multiplicity="0..1" />
+          <End Role="FEEDBACK" Type="Self.FEEDBACK" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="QUANLY">
+              <PropertyRef Name="MAQL" />
+            </Principal>
+            <Dependent Role="FEEDBACK">
+              <PropertyRef Name="MAQL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__FEEDBACK__MASP__59063A47">
+          <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="0..1" />
+          <End Role="FEEDBACK" Type="Self.FEEDBACK" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SANPHAM">
+              <PropertyRef Name="MASP" />
+            </Principal>
+            <Dependent Role="FEEDBACK">
+              <PropertyRef Name="MASP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__GIOHANG__MAKH__4AB81AF0">
+          <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="0..1" />
+          <End Role="GIOHANG" Type="Self.GIOHANG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KHACHHANG">
+              <PropertyRef Name="MAKH" />
+            </Principal>
+            <Dependent Role="GIOHANG">
+              <PropertyRef Name="MAKH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__KHACHHANG__MAQL__3C69FB99">
+          <End Role="QUANLY" Type="Self.QUANLY" Multiplicity="0..1" />
+          <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="QUANLY">
+              <PropertyRef Name="MAQL" />
+            </Principal>
+            <Dependent Role="KHACHHANG">
+              <PropertyRef Name="MAQL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PRODUCTIMA__MASP__5BE2A6F2">
+          <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="0..1" />
+          <End Role="PRODUCTIMAGE" Type="Self.PRODUCTIMAGE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SANPHAM">
+              <PropertyRef Name="MASP" />
+            </Principal>
+            <Dependent Role="PRODUCTIMAGE">
+              <PropertyRef Name="MASP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__QUANLY__MAAD__398D8EEE">
+          <End Role="ADDMIN" Type="Self.ADDMIN" Multiplicity="0..1" />
+          <End Role="QUANLY" Type="Self.QUANLY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ADDMIN">
+              <PropertyRef Name="MAAD" />
+            </Principal>
+            <Dependent Role="QUANLY">
+              <PropertyRef Name="MAAD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SANPHAM__MAL__44FF419A">
+          <End Role="LOAISP" Type="Self.LOAISP" Multiplicity="0..1" />
+          <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOAISP">
+              <PropertyRef Name="MAL" />
+            </Principal>
+            <Dependent Role="SANPHAM">
+              <PropertyRef Name="MAL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SANPHAM__MAQL__4316F928">
+          <End Role="QUANLY" Type="Self.QUANLY" Multiplicity="0..1" />
+          <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="QUANLY">
+              <PropertyRef Name="MAQL" />
+            </Principal>
+            <Dependent Role="SANPHAM">
+              <PropertyRef Name="MAQL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SANPHAM__MATH__440B1D61">
+          <End Role="THUONGHIEU" Type="Self.THUONGHIEU" Multiplicity="0..1" />
+          <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="THUONGHIEU">
+              <PropertyRef Name="MATH" />
+            </Principal>
+            <Dependent Role="SANPHAM">
+              <PropertyRef Name="MATH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="db_LAPTOPSTORESModelStoreContainer">
+          <EntitySet Name="ADDMIN" EntityType="Self.ADDMIN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CAUHINH" EntityType="Self.CAUHINH" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CTGIOHANG" EntityType="Self.CTGIOHANG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DONHANG" EntityType="Self.DONHANG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FEEDBACK" EntityType="Self.FEEDBACK" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GIOHANG" EntityType="Self.GIOHANG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KHACHHANG" EntityType="Self.KHACHHANG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LOAISP" EntityType="Self.LOAISP" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PRODUCTIMAGE" EntityType="Self.PRODUCTIMAGE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="QUANLY" EntityType="Self.QUANLY" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SANPHAM" EntityType="Self.SANPHAM" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="THUONGHIEU" EntityType="Self.THUONGHIEU" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__CAUHINH__MASP__47DBAE45" Association="Self.FK__CAUHINH__MASP__47DBAE45">
+            <End Role="SANPHAM" EntitySet="SANPHAM" />
+            <End Role="CAUHINH" EntitySet="CAUHINH" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CTGIOHANG__MAGH__4D94879B" Association="Self.FK__CTGIOHANG__MAGH__4D94879B">
+            <End Role="GIOHANG" EntitySet="GIOHANG" />
+            <End Role="CTGIOHANG" EntitySet="CTGIOHANG" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CTGIOHANG__MASP__4E88ABD4" Association="Self.FK__CTGIOHANG__MASP__4E88ABD4">
+            <End Role="SANPHAM" EntitySet="SANPHAM" />
+            <End Role="CTGIOHANG" EntitySet="CTGIOHANG" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DONHANG__MAKH__5165187F" Association="Self.FK__DONHANG__MAKH__5165187F">
+            <End Role="KHACHHANG" EntitySet="KHACHHANG" />
+            <End Role="DONHANG" EntitySet="DONHANG" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DONHANG__MAQL__52593CB8" Association="Self.FK__DONHANG__MAQL__52593CB8">
+            <End Role="QUANLY" EntitySet="QUANLY" />
+            <End Role="DONHANG" EntitySet="DONHANG" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DONHANG__MASP__534D60F1" Association="Self.FK__DONHANG__MASP__534D60F1">
+            <End Role="SANPHAM" EntitySet="SANPHAM" />
+            <End Role="DONHANG" EntitySet="DONHANG" />
+          </AssociationSet>
+          <AssociationSet Name="FK__FEEDBACK__MAKH__571DF1D5" Association="Self.FK__FEEDBACK__MAKH__571DF1D5">
+            <End Role="KHACHHANG" EntitySet="KHACHHANG" />
+            <End Role="FEEDBACK" EntitySet="FEEDBACK" />
+          </AssociationSet>
+          <AssociationSet Name="FK__FEEDBACK__MAQL__5812160E" Association="Self.FK__FEEDBACK__MAQL__5812160E">
+            <End Role="QUANLY" EntitySet="QUANLY" />
+            <End Role="FEEDBACK" EntitySet="FEEDBACK" />
+          </AssociationSet>
+          <AssociationSet Name="FK__FEEDBACK__MASP__59063A47" Association="Self.FK__FEEDBACK__MASP__59063A47">
+            <End Role="SANPHAM" EntitySet="SANPHAM" />
+            <End Role="FEEDBACK" EntitySet="FEEDBACK" />
+          </AssociationSet>
+          <AssociationSet Name="FK__GIOHANG__MAKH__4AB81AF0" Association="Self.FK__GIOHANG__MAKH__4AB81AF0">
+            <End Role="KHACHHANG" EntitySet="KHACHHANG" />
+            <End Role="GIOHANG" EntitySet="GIOHANG" />
+          </AssociationSet>
+          <AssociationSet Name="FK__KHACHHANG__MAQL__3C69FB99" Association="Self.FK__KHACHHANG__MAQL__3C69FB99">
+            <End Role="QUANLY" EntitySet="QUANLY" />
+            <End Role="KHACHHANG" EntitySet="KHACHHANG" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PRODUCTIMA__MASP__5BE2A6F2" Association="Self.FK__PRODUCTIMA__MASP__5BE2A6F2">
+            <End Role="SANPHAM" EntitySet="SANPHAM" />
+            <End Role="PRODUCTIMAGE" EntitySet="PRODUCTIMAGE" />
+          </AssociationSet>
+          <AssociationSet Name="FK__QUANLY__MAAD__398D8EEE" Association="Self.FK__QUANLY__MAAD__398D8EEE">
+            <End Role="ADDMIN" EntitySet="ADDMIN" />
+            <End Role="QUANLY" EntitySet="QUANLY" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SANPHAM__MAL__44FF419A" Association="Self.FK__SANPHAM__MAL__44FF419A">
+            <End Role="LOAISP" EntitySet="LOAISP" />
+            <End Role="SANPHAM" EntitySet="SANPHAM" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SANPHAM__MAQL__4316F928" Association="Self.FK__SANPHAM__MAQL__4316F928">
+            <End Role="QUANLY" EntitySet="QUANLY" />
+            <End Role="SANPHAM" EntitySet="SANPHAM" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SANPHAM__MATH__440B1D61" Association="Self.FK__SANPHAM__MATH__440B1D61">
+            <End Role="THUONGHIEU" EntitySet="THUONGHIEU" />
+            <End Role="SANPHAM" EntitySet="SANPHAM" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="db_LAPTOPSTORESModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ADDMIN">
+          <Key>
+            <PropertyRef Name="MAAD" />
+          </Key>
+          <Property Name="MAAD" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HOTEN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GMAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="USERNAME" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="PASS" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="QUANLies" Relationship="Self.FK__QUANLY__MAAD__398D8EEE" FromRole="ADDMIN" ToRole="QUANLY" />
+        </EntityType>
+        <EntityType Name="CAUHINH">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HDH" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CPU" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RAM" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="OCUNG" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CARDDOHOA" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MANHINH" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PIN" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TRONGLUONG" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="KETNOIMANG" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BANPHIM" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BAOHANH" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MASP" Type="Int32" />
+          <NavigationProperty Name="SANPHAM" Relationship="Self.FK__CAUHINH__MASP__47DBAE45" FromRole="CAUHINH" ToRole="SANPHAM" />
+        </EntityType>
+        <EntityType Name="CTGIOHANG">
+          <Key>
+            <PropertyRef Name="MACTGH" />
+          </Key>
+          <Property Name="MACTGH" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MAGH" Type="Int32" />
+          <Property Name="MASP" Type="Int32" />
+          <Property Name="NGAYTHEM" Type="DateTime" Precision="0" />
+          <Property Name="SL" Type="Int32" />
+          <Property Name="GIA" Type="Double" />
+          <Property Name="TONGTIEN" Type="Double" annotation:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="GIOHANG" Relationship="Self.FK__CTGIOHANG__MAGH__4D94879B" FromRole="CTGIOHANG" ToRole="GIOHANG" />
+          <NavigationProperty Name="SANPHAM" Relationship="Self.FK__CTGIOHANG__MASP__4E88ABD4" FromRole="CTGIOHANG" ToRole="SANPHAM" />
+        </EntityType>
+        <EntityType Name="DONHANG">
+          <Key>
+            <PropertyRef Name="MADH" />
+          </Key>
+          <Property Name="MADH" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NGAYDAT" Type="DateTime" Precision="3" />
+          <Property Name="SL" Type="Int32" />
+          <Property Name="GIA" Type="Double" />
+          <Property Name="TONGTIEN" Type="Double" />
+          <Property Name="TRANGTHAIDH" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="MASP" Type="Int32" />
+          <Property Name="MAKH" Type="Int32" />
+          <Property Name="MAQL" Type="Int32" />
+          <NavigationProperty Name="KHACHHANG" Relationship="Self.FK__DONHANG__MAKH__5165187F" FromRole="DONHANG" ToRole="KHACHHANG" />
+          <NavigationProperty Name="QUANLY" Relationship="Self.FK__DONHANG__MAQL__52593CB8" FromRole="DONHANG" ToRole="QUANLY" />
+          <NavigationProperty Name="SANPHAM" Relationship="Self.FK__DONHANG__MASP__534D60F1" FromRole="DONHANG" ToRole="SANPHAM" />
+        </EntityType>
+        <EntityType Name="FEEDBACK">
+          <Key>
+            <PropertyRef Name="MAFB" />
+          </Key>
+          <Property Name="MAFB" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NGAYFB" Type="DateTime" Precision="3" />
+          <Property Name="NOIDUNG" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="RATING" Type="Int32" />
+          <Property Name="MAKH" Type="Int32" />
+          <Property Name="MAQL" Type="Int32" />
+          <Property Name="MASP" Type="Int32" />
+          <NavigationProperty Name="KHACHHANG" Relationship="Self.FK__FEEDBACK__MAKH__571DF1D5" FromRole="FEEDBACK" ToRole="KHACHHANG" />
+          <NavigationProperty Name="QUANLY" Relationship="Self.FK__FEEDBACK__MAQL__5812160E" FromRole="FEEDBACK" ToRole="QUANLY" />
+          <NavigationProperty Name="SANPHAM" Relationship="Self.FK__FEEDBACK__MASP__59063A47" FromRole="FEEDBACK" ToRole="SANPHAM" />
+        </EntityType>
+        <EntityType Name="GIOHANG">
+          <Key>
+            <PropertyRef Name="MAGH" />
+          </Key>
+          <Property Name="MAGH" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MAKH" Type="Int32" />
+          <NavigationProperty Name="CTGIOHANGs" Relationship="Self.FK__CTGIOHANG__MAGH__4D94879B" FromRole="GIOHANG" ToRole="CTGIOHANG" />
+          <NavigationProperty Name="KHACHHANG" Relationship="Self.FK__GIOHANG__MAKH__4AB81AF0" FromRole="GIOHANG" ToRole="KHACHHANG" />
+        </EntityType>
+        <EntityType Name="KHACHHANG">
+          <Key>
+            <PropertyRef Name="MAKH" />
+          </Key>
+          <Property Name="MAKH" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HOTEN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NGAYSINH" Type="DateTime" Precision="3" />
+          <Property Name="GIOITINH" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="DIACHI" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SDT" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="GMAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="NGAYDK" Type="DateTime" Precision="3" />
+          <Property Name="USERNAME" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="PASS" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="MAQL" Type="Int32" />
+          <NavigationProperty Name="DONHANGs" Relationship="Self.FK__DONHANG__MAKH__5165187F" FromRole="KHACHHANG" ToRole="DONHANG" />
+          <NavigationProperty Name="FEEDBACKs" Relationship="Self.FK__FEEDBACK__MAKH__571DF1D5" FromRole="KHACHHANG" ToRole="FEEDBACK" />
+          <NavigationProperty Name="GIOHANGs" Relationship="Self.FK__GIOHANG__MAKH__4AB81AF0" FromRole="KHACHHANG" ToRole="GIOHANG" />
+          <NavigationProperty Name="QUANLY" Relationship="Self.FK__KHACHHANG__MAQL__3C69FB99" FromRole="KHACHHANG" ToRole="QUANLY" />
+        </EntityType>
+        <EntityType Name="LOAISP">
+          <Key>
+            <PropertyRef Name="MAL" />
+          </Key>
+          <Property Name="MAL" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TENLOAI" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="SANPHAMs" Relationship="Self.FK__SANPHAM__MAL__44FF419A" FromRole="LOAISP" ToRole="SANPHAM" />
+        </EntityType>
+        <EntityType Name="PRODUCTIMAGE">
+          <Key>
+            <PropertyRef Name="MAHA" />
+          </Key>
+          <Property Name="MAHA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HA" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MASP" Type="Int32" />
+          <NavigationProperty Name="SANPHAM" Relationship="Self.FK__PRODUCTIMA__MASP__5BE2A6F2" FromRole="PRODUCTIMAGE" ToRole="SANPHAM" />
+        </EntityType>
+        <EntityType Name="QUANLY">
+          <Key>
+            <PropertyRef Name="MAQL" />
+          </Key>
+          <Property Name="MAQL" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HOTEN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GMAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="VAITRO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="USERNAME" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="PASS" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="MAAD" Type="Int32" />
+          <NavigationProperty Name="ADDMIN" Relationship="Self.FK__QUANLY__MAAD__398D8EEE" FromRole="QUANLY" ToRole="ADDMIN" />
+          <NavigationProperty Name="DONHANGs" Relationship="Self.FK__DONHANG__MAQL__52593CB8" FromRole="QUANLY" ToRole="DONHANG" />
+          <NavigationProperty Name="FEEDBACKs" Relationship="Self.FK__FEEDBACK__MAQL__5812160E" FromRole="QUANLY" ToRole="FEEDBACK" />
+          <NavigationProperty Name="KHACHHANGs" Relationship="Self.FK__KHACHHANG__MAQL__3C69FB99" FromRole="QUANLY" ToRole="KHACHHANG" />
+          <NavigationProperty Name="SANPHAMs" Relationship="Self.FK__SANPHAM__MAQL__4316F928" FromRole="QUANLY" ToRole="SANPHAM" />
+        </EntityType>
+        <EntityType Name="SANPHAM">
+          <Key>
+            <PropertyRef Name="MASP" />
+          </Key>
+          <Property Name="MASP" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TENSP" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="GIA" Type="Double" />
+          <Property Name="SLTON" Type="Int32" />
+          <Property Name="SLBAN" Type="Int32" />
+          <Property Name="MOTA" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DISCOUNT" Type="Int32" />
+          <Property Name="THOIGIAN" Type="DateTime" Precision="3" />
+          <Property Name="GIADAGIAM" Type="Double" />
+          <Property Name="HINHANH" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MAQL" Type="Int32" />
+          <Property Name="MATH" Type="Int32" />
+          <Property Name="MAL" Type="Int32" />
+          <NavigationProperty Name="CAUHINHs" Relationship="Self.FK__CAUHINH__MASP__47DBAE45" FromRole="SANPHAM" ToRole="CAUHINH" />
+          <NavigationProperty Name="CTGIOHANGs" Relationship="Self.FK__CTGIOHANG__MASP__4E88ABD4" FromRole="SANPHAM" ToRole="CTGIOHANG" />
+          <NavigationProperty Name="DONHANGs" Relationship="Self.FK__DONHANG__MASP__534D60F1" FromRole="SANPHAM" ToRole="DONHANG" />
+          <NavigationProperty Name="FEEDBACKs" Relationship="Self.FK__FEEDBACK__MASP__59063A47" FromRole="SANPHAM" ToRole="FEEDBACK" />
+          <NavigationProperty Name="LOAISP" Relationship="Self.FK__SANPHAM__MAL__44FF419A" FromRole="SANPHAM" ToRole="LOAISP" />
+          <NavigationProperty Name="PRODUCTIMAGEs" Relationship="Self.FK__PRODUCTIMA__MASP__5BE2A6F2" FromRole="SANPHAM" ToRole="PRODUCTIMAGE" />
+          <NavigationProperty Name="QUANLY" Relationship="Self.FK__SANPHAM__MAQL__4316F928" FromRole="SANPHAM" ToRole="QUANLY" />
+          <NavigationProperty Name="THUONGHIEU" Relationship="Self.FK__SANPHAM__MATH__440B1D61" FromRole="SANPHAM" ToRole="THUONGHIEU" />
+        </EntityType>
+        <EntityType Name="THUONGHIEU">
+          <Key>
+            <PropertyRef Name="MATH" />
+          </Key>
+          <Property Name="MATH" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TENTH" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="SANPHAMs" Relationship="Self.FK__SANPHAM__MATH__440B1D61" FromRole="THUONGHIEU" ToRole="SANPHAM" />
+        </EntityType>
+        <Association Name="FK__QUANLY__MAAD__398D8EEE">
+          <End Role="ADDMIN" Type="Self.ADDMIN" Multiplicity="0..1" />
+          <End Role="QUANLY" Type="Self.QUANLY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ADDMIN">
+              <PropertyRef Name="MAAD" />
+            </Principal>
+            <Dependent Role="QUANLY">
+              <PropertyRef Name="MAAD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CAUHINH__MASP__47DBAE45">
+          <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="0..1" />
+          <End Role="CAUHINH" Type="Self.CAUHINH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SANPHAM">
+              <PropertyRef Name="MASP" />
+            </Principal>
+            <Dependent Role="CAUHINH">
+              <PropertyRef Name="MASP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CTGIOHANG__MAGH__4D94879B">
+          <End Role="GIOHANG" Type="Self.GIOHANG" Multiplicity="0..1" />
+          <End Role="CTGIOHANG" Type="Self.CTGIOHANG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GIOHANG">
+              <PropertyRef Name="MAGH" />
+            </Principal>
+            <Dependent Role="CTGIOHANG">
+              <PropertyRef Name="MAGH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CTGIOHANG__MASP__4E88ABD4">
+          <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="0..1" />
+          <End Role="CTGIOHANG" Type="Self.CTGIOHANG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SANPHAM">
+              <PropertyRef Name="MASP" />
+            </Principal>
+            <Dependent Role="CTGIOHANG">
+              <PropertyRef Name="MASP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DONHANG__MAKH__5165187F">
+          <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="0..1" />
+          <End Role="DONHANG" Type="Self.DONHANG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KHACHHANG">
+              <PropertyRef Name="MAKH" />
+            </Principal>
+            <Dependent Role="DONHANG">
+              <PropertyRef Name="MAKH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DONHANG__MAQL__52593CB8">
+          <End Role="QUANLY" Type="Self.QUANLY" Multiplicity="0..1" />
+          <End Role="DONHANG" Type="Self.DONHANG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="QUANLY">
+              <PropertyRef Name="MAQL" />
+            </Principal>
+            <Dependent Role="DONHANG">
+              <PropertyRef Name="MAQL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DONHANG__MASP__534D60F1">
+          <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="0..1" />
+          <End Role="DONHANG" Type="Self.DONHANG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SANPHAM">
+              <PropertyRef Name="MASP" />
+            </Principal>
+            <Dependent Role="DONHANG">
+              <PropertyRef Name="MASP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__FEEDBACK__MAKH__571DF1D5">
+          <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="0..1" />
+          <End Role="FEEDBACK" Type="Self.FEEDBACK" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KHACHHANG">
+              <PropertyRef Name="MAKH" />
+            </Principal>
+            <Dependent Role="FEEDBACK">
+              <PropertyRef Name="MAKH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__FEEDBACK__MAQL__5812160E">
+          <End Role="QUANLY" Type="Self.QUANLY" Multiplicity="0..1" />
+          <End Role="FEEDBACK" Type="Self.FEEDBACK" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="QUANLY">
+              <PropertyRef Name="MAQL" />
+            </Principal>
+            <Dependent Role="FEEDBACK">
+              <PropertyRef Name="MAQL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__FEEDBACK__MASP__59063A47">
+          <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="0..1" />
+          <End Role="FEEDBACK" Type="Self.FEEDBACK" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SANPHAM">
+              <PropertyRef Name="MASP" />
+            </Principal>
+            <Dependent Role="FEEDBACK">
+              <PropertyRef Name="MASP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__GIOHANG__MAKH__4AB81AF0">
+          <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="0..1" />
+          <End Role="GIOHANG" Type="Self.GIOHANG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KHACHHANG">
+              <PropertyRef Name="MAKH" />
+            </Principal>
+            <Dependent Role="GIOHANG">
+              <PropertyRef Name="MAKH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__KHACHHANG__MAQL__3C69FB99">
+          <End Role="QUANLY" Type="Self.QUANLY" Multiplicity="0..1" />
+          <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="QUANLY">
+              <PropertyRef Name="MAQL" />
+            </Principal>
+            <Dependent Role="KHACHHANG">
+              <PropertyRef Name="MAQL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SANPHAM__MAL__44FF419A">
+          <End Role="LOAISP" Type="Self.LOAISP" Multiplicity="0..1" />
+          <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOAISP">
+              <PropertyRef Name="MAL" />
+            </Principal>
+            <Dependent Role="SANPHAM">
+              <PropertyRef Name="MAL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PRODUCTIMA__MASP__5BE2A6F2">
+          <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="0..1" />
+          <End Role="PRODUCTIMAGE" Type="Self.PRODUCTIMAGE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SANPHAM">
+              <PropertyRef Name="MASP" />
+            </Principal>
+            <Dependent Role="PRODUCTIMAGE">
+              <PropertyRef Name="MASP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SANPHAM__MAQL__4316F928">
+          <End Role="QUANLY" Type="Self.QUANLY" Multiplicity="0..1" />
+          <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="QUANLY">
+              <PropertyRef Name="MAQL" />
+            </Principal>
+            <Dependent Role="SANPHAM">
+              <PropertyRef Name="MAQL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SANPHAM__MATH__440B1D61">
+          <End Role="THUONGHIEU" Type="Self.THUONGHIEU" Multiplicity="0..1" />
+          <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="THUONGHIEU">
+              <PropertyRef Name="MATH" />
+            </Principal>
+            <Dependent Role="SANPHAM">
+              <PropertyRef Name="MATH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="db_LAPTOPSTORESEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ADDMINs" EntityType="Self.ADDMIN" />
+          <EntitySet Name="CAUHINHs" EntityType="Self.CAUHINH" />
+          <EntitySet Name="CTGIOHANGs" EntityType="Self.CTGIOHANG" />
+          <EntitySet Name="DONHANGs" EntityType="Self.DONHANG" />
+          <EntitySet Name="FEEDBACKs" EntityType="Self.FEEDBACK" />
+          <EntitySet Name="GIOHANGs" EntityType="Self.GIOHANG" />
+          <EntitySet Name="KHACHHANGs" EntityType="Self.KHACHHANG" />
+          <EntitySet Name="LOAISPs" EntityType="Self.LOAISP" />
+          <EntitySet Name="PRODUCTIMAGEs" EntityType="Self.PRODUCTIMAGE" />
+          <EntitySet Name="QUANLies" EntityType="Self.QUANLY" />
+          <EntitySet Name="SANPHAMs" EntityType="Self.SANPHAM" />
+          <EntitySet Name="THUONGHIEUx" EntityType="Self.THUONGHIEU" />
+          <AssociationSet Name="FK__QUANLY__MAAD__398D8EEE" Association="Self.FK__QUANLY__MAAD__398D8EEE">
+            <End Role="ADDMIN" EntitySet="ADDMINs" />
+            <End Role="QUANLY" EntitySet="QUANLies" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CAUHINH__MASP__47DBAE45" Association="Self.FK__CAUHINH__MASP__47DBAE45">
+            <End Role="SANPHAM" EntitySet="SANPHAMs" />
+            <End Role="CAUHINH" EntitySet="CAUHINHs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CTGIOHANG__MAGH__4D94879B" Association="Self.FK__CTGIOHANG__MAGH__4D94879B">
+            <End Role="GIOHANG" EntitySet="GIOHANGs" />
+            <End Role="CTGIOHANG" EntitySet="CTGIOHANGs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CTGIOHANG__MASP__4E88ABD4" Association="Self.FK__CTGIOHANG__MASP__4E88ABD4">
+            <End Role="SANPHAM" EntitySet="SANPHAMs" />
+            <End Role="CTGIOHANG" EntitySet="CTGIOHANGs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DONHANG__MAKH__5165187F" Association="Self.FK__DONHANG__MAKH__5165187F">
+            <End Role="KHACHHANG" EntitySet="KHACHHANGs" />
+            <End Role="DONHANG" EntitySet="DONHANGs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DONHANG__MAQL__52593CB8" Association="Self.FK__DONHANG__MAQL__52593CB8">
+            <End Role="QUANLY" EntitySet="QUANLies" />
+            <End Role="DONHANG" EntitySet="DONHANGs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DONHANG__MASP__534D60F1" Association="Self.FK__DONHANG__MASP__534D60F1">
+            <End Role="SANPHAM" EntitySet="SANPHAMs" />
+            <End Role="DONHANG" EntitySet="DONHANGs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__FEEDBACK__MAKH__571DF1D5" Association="Self.FK__FEEDBACK__MAKH__571DF1D5">
+            <End Role="KHACHHANG" EntitySet="KHACHHANGs" />
+            <End Role="FEEDBACK" EntitySet="FEEDBACKs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__FEEDBACK__MAQL__5812160E" Association="Self.FK__FEEDBACK__MAQL__5812160E">
+            <End Role="QUANLY" EntitySet="QUANLies" />
+            <End Role="FEEDBACK" EntitySet="FEEDBACKs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__FEEDBACK__MASP__59063A47" Association="Self.FK__FEEDBACK__MASP__59063A47">
+            <End Role="SANPHAM" EntitySet="SANPHAMs" />
+            <End Role="FEEDBACK" EntitySet="FEEDBACKs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__GIOHANG__MAKH__4AB81AF0" Association="Self.FK__GIOHANG__MAKH__4AB81AF0">
+            <End Role="KHACHHANG" EntitySet="KHACHHANGs" />
+            <End Role="GIOHANG" EntitySet="GIOHANGs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__KHACHHANG__MAQL__3C69FB99" Association="Self.FK__KHACHHANG__MAQL__3C69FB99">
+            <End Role="QUANLY" EntitySet="QUANLies" />
+            <End Role="KHACHHANG" EntitySet="KHACHHANGs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SANPHAM__MAL__44FF419A" Association="Self.FK__SANPHAM__MAL__44FF419A">
+            <End Role="LOAISP" EntitySet="LOAISPs" />
+            <End Role="SANPHAM" EntitySet="SANPHAMs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PRODUCTIMA__MASP__5BE2A6F2" Association="Self.FK__PRODUCTIMA__MASP__5BE2A6F2">
+            <End Role="SANPHAM" EntitySet="SANPHAMs" />
+            <End Role="PRODUCTIMAGE" EntitySet="PRODUCTIMAGEs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SANPHAM__MAQL__4316F928" Association="Self.FK__SANPHAM__MAQL__4316F928">
+            <End Role="QUANLY" EntitySet="QUANLies" />
+            <End Role="SANPHAM" EntitySet="SANPHAMs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SANPHAM__MATH__440B1D61" Association="Self.FK__SANPHAM__MATH__440B1D61">
+            <End Role="THUONGHIEU" EntitySet="THUONGHIEUx" />
+            <End Role="SANPHAM" EntitySet="SANPHAMs" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="db_LAPTOPSTORESModelStoreContainer" CdmEntityContainer="db_LAPTOPSTORESEntities">
+          <EntitySetMapping Name="ADDMINs">
+            <EntityTypeMapping TypeName="db_LAPTOPSTORESModel.ADDMIN">
+              <MappingFragment StoreEntitySet="ADDMIN">
+                <ScalarProperty Name="MAAD" ColumnName="MAAD" />
+                <ScalarProperty Name="HOTEN" ColumnName="HOTEN" />
+                <ScalarProperty Name="GMAIL" ColumnName="GMAIL" />
+                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+                <ScalarProperty Name="PASS" ColumnName="PASS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CAUHINHs">
+            <EntityTypeMapping TypeName="db_LAPTOPSTORESModel.CAUHINH">
+              <MappingFragment StoreEntitySet="CAUHINH">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="HDH" ColumnName="HDH" />
+                <ScalarProperty Name="CPU" ColumnName="CPU" />
+                <ScalarProperty Name="RAM" ColumnName="RAM" />
+                <ScalarProperty Name="OCUNG" ColumnName="OCUNG" />
+                <ScalarProperty Name="CARDDOHOA" ColumnName="CARDDOHOA" />
+                <ScalarProperty Name="MANHINH" ColumnName="MANHINH" />
+                <ScalarProperty Name="PIN" ColumnName="PIN" />
+                <ScalarProperty Name="TRONGLUONG" ColumnName="TRONGLUONG" />
+                <ScalarProperty Name="KETNOIMANG" ColumnName="KETNOIMANG" />
+                <ScalarProperty Name="BANPHIM" ColumnName="BANPHIM" />
+                <ScalarProperty Name="BAOHANH" ColumnName="BAOHANH" />
+                <ScalarProperty Name="MASP" ColumnName="MASP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CTGIOHANGs">
+            <EntityTypeMapping TypeName="db_LAPTOPSTORESModel.CTGIOHANG">
+              <MappingFragment StoreEntitySet="CTGIOHANG">
+                <ScalarProperty Name="MACTGH" ColumnName="MACTGH" />
+                <ScalarProperty Name="MAGH" ColumnName="MAGH" />
+                <ScalarProperty Name="MASP" ColumnName="MASP" />
+                <ScalarProperty Name="NGAYTHEM" ColumnName="NGAYTHEM" />
+                <ScalarProperty Name="SL" ColumnName="SL" />
+                <ScalarProperty Name="GIA" ColumnName="GIA" />
+                <ScalarProperty Name="TONGTIEN" ColumnName="TONGTIEN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DONHANGs">
+            <EntityTypeMapping TypeName="db_LAPTOPSTORESModel.DONHANG">
+              <MappingFragment StoreEntitySet="DONHANG">
+                <ScalarProperty Name="MADH" ColumnName="MADH" />
+                <ScalarProperty Name="NGAYDAT" ColumnName="NGAYDAT" />
+                <ScalarProperty Name="SL" ColumnName="SL" />
+                <ScalarProperty Name="GIA" ColumnName="GIA" />
+                <ScalarProperty Name="TONGTIEN" ColumnName="TONGTIEN" />
+                <ScalarProperty Name="TRANGTHAIDH" ColumnName="TRANGTHAIDH" />
+                <ScalarProperty Name="MASP" ColumnName="MASP" />
+                <ScalarProperty Name="MAKH" ColumnName="MAKH" />
+                <ScalarProperty Name="MAQL" ColumnName="MAQL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FEEDBACKs">
+            <EntityTypeMapping TypeName="db_LAPTOPSTORESModel.FEEDBACK">
+              <MappingFragment StoreEntitySet="FEEDBACK">
+                <ScalarProperty Name="MAFB" ColumnName="MAFB" />
+                <ScalarProperty Name="NGAYFB" ColumnName="NGAYFB" />
+                <ScalarProperty Name="NOIDUNG" ColumnName="NOIDUNG" />
+                <ScalarProperty Name="RATING" ColumnName="RATING" />
+                <ScalarProperty Name="MAKH" ColumnName="MAKH" />
+                <ScalarProperty Name="MAQL" ColumnName="MAQL" />
+                <ScalarProperty Name="MASP" ColumnName="MASP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GIOHANGs">
+            <EntityTypeMapping TypeName="db_LAPTOPSTORESModel.GIOHANG">
+              <MappingFragment StoreEntitySet="GIOHANG">
+                <ScalarProperty Name="MAGH" ColumnName="MAGH" />
+                <ScalarProperty Name="MAKH" ColumnName="MAKH" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KHACHHANGs">
+            <EntityTypeMapping TypeName="db_LAPTOPSTORESModel.KHACHHANG">
+              <MappingFragment StoreEntitySet="KHACHHANG">
+                <ScalarProperty Name="MAKH" ColumnName="MAKH" />
+                <ScalarProperty Name="HOTEN" ColumnName="HOTEN" />
+                <ScalarProperty Name="NGAYSINH" ColumnName="NGAYSINH" />
+                <ScalarProperty Name="GIOITINH" ColumnName="GIOITINH" />
+                <ScalarProperty Name="DIACHI" ColumnName="DIACHI" />
+                <ScalarProperty Name="SDT" ColumnName="SDT" />
+                <ScalarProperty Name="GMAIL" ColumnName="GMAIL" />
+                <ScalarProperty Name="NGAYDK" ColumnName="NGAYDK" />
+                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+                <ScalarProperty Name="PASS" ColumnName="PASS" />
+                <ScalarProperty Name="MAQL" ColumnName="MAQL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LOAISPs">
+            <EntityTypeMapping TypeName="db_LAPTOPSTORESModel.LOAISP">
+              <MappingFragment StoreEntitySet="LOAISP">
+                <ScalarProperty Name="MAL" ColumnName="MAL" />
+                <ScalarProperty Name="TENLOAI" ColumnName="TENLOAI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PRODUCTIMAGEs">
+            <EntityTypeMapping TypeName="db_LAPTOPSTORESModel.PRODUCTIMAGE">
+              <MappingFragment StoreEntitySet="PRODUCTIMAGE">
+                <ScalarProperty Name="MAHA" ColumnName="MAHA" />
+                <ScalarProperty Name="HA" ColumnName="HA" />
+                <ScalarProperty Name="MASP" ColumnName="MASP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="QUANLies">
+            <EntityTypeMapping TypeName="db_LAPTOPSTORESModel.QUANLY">
+              <MappingFragment StoreEntitySet="QUANLY">
+                <ScalarProperty Name="MAQL" ColumnName="MAQL" />
+                <ScalarProperty Name="HOTEN" ColumnName="HOTEN" />
+                <ScalarProperty Name="GMAIL" ColumnName="GMAIL" />
+                <ScalarProperty Name="VAITRO" ColumnName="VAITRO" />
+                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+                <ScalarProperty Name="PASS" ColumnName="PASS" />
+                <ScalarProperty Name="MAAD" ColumnName="MAAD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SANPHAMs">
+            <EntityTypeMapping TypeName="db_LAPTOPSTORESModel.SANPHAM">
+              <MappingFragment StoreEntitySet="SANPHAM">
+                <ScalarProperty Name="MASP" ColumnName="MASP" />
+                <ScalarProperty Name="TENSP" ColumnName="TENSP" />
+                <ScalarProperty Name="GIA" ColumnName="GIA" />
+                <ScalarProperty Name="SLTON" ColumnName="SLTON" />
+                <ScalarProperty Name="SLBAN" ColumnName="SLBAN" />
+                <ScalarProperty Name="MOTA" ColumnName="MOTA" />
+                <ScalarProperty Name="DISCOUNT" ColumnName="DISCOUNT" />
+                <ScalarProperty Name="THOIGIAN" ColumnName="THOIGIAN" />
+                <ScalarProperty Name="GIADAGIAM" ColumnName="GIADAGIAM" />
+                <ScalarProperty Name="HINHANH" ColumnName="HINHANH" />
+                <ScalarProperty Name="MAQL" ColumnName="MAQL" />
+                <ScalarProperty Name="MATH" ColumnName="MATH" />
+                <ScalarProperty Name="MAL" ColumnName="MAL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="THUONGHIEUx">
+            <EntityTypeMapping TypeName="db_LAPTOPSTORESModel.THUONGHIEU">
+              <MappingFragment StoreEntitySet="THUONGHIEU">
+                <ScalarProperty Name="MATH" ColumnName="MATH" />
+                <ScalarProperty Name="TENTH" ColumnName="TENTH" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,51 @@
+﻿@model IEnumerable<WebsiteBanLaptop.Models.SANPHAM>
+@{
+    ViewBag.Title = "Product";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="main">
+    @Html.Partial("_PartialTopbar")
+    <div class="detail">
+        <div class="recentProducts">
+            <div class="cardHeader">
+                <h2>Danh mục sản phẩm</h2>
+                <a href="@Url.Action("Create New", "Create")" class="btn">Tạo sản phẩm mới</a>
+            </div>
+            <table>
+                <tr>
+                    <td>MASP</td>
+                    <td>Tên sản phẩm</td>
+                    <td>Giá</td>
+                    <td>Sl tồn</td>
+                    <td>Sl đã bán</td>
+                    <td>Hình ảnh</td>
+                    <td>Tên thương hiệu</td>
+                    <td>Loại</td>
+                    <td></td>
+                </tr>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.MASP)</td>
+                        <td>@Html.DisplayFor(modelItem => item.TENSP)</td>
+                        <td>@Html.DisplayFor(modelItem => item.GIA)</td>
+                        <td>@Html.DisplayFor(modelItem => item.SLTON)</td>
+                        <td>@Html.DisplayFor(modelItem => item.SLBAN)</td>
+                        <td style="width: 150px;">
+                            @*<img class="product-image" src="~/Image/Product/@item.HINHANH" alt="">*@
+                        </td>
+                        <td>@Html.DisplayFor(modelItem => item.THUONGHIEU.TENTH)</td>
+                        <td>@Html.DisplayFor(modelItem => item.LOAISP.TENLOAI)</td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.MASP }) <br />
+                            @Html.ActionLink("Details", "Details", new { id = item.MASP }) <br />
+                            @Html.ActionLink("Delete", "Delete", new { id = item.MASP })
+                        </td>
+                    </tr>
+                }
+            </table>
+
+        </div>
+    </div>
+</div>

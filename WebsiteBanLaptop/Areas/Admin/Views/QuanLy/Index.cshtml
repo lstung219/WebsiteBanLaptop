@@ -1,0 +1,117 @@
+﻿@model WebsiteBanLaptop.Models.ViewModel.DashboardViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+<div class="main">
+    @Html.Partial("_PartialTopbar")
+    <div class="cardBox">
+        @*<div class="card" style="background-color: yellow">*@
+        <div class="card">
+            <div>
+                <div class="number">@ViewBag.UserCount</div>
+                <div class="cardName">Người dùng</div>
+            </div>
+            <div class="iconBox">
+                <i class="fas fa-users"></i>
+            </div>
+        </div>
+
+        <div class="card">
+            <div>
+                <div class="number">@ViewBag.OrderCount</div>
+                <div class="cardName">Đơn hàng</div>
+            </div>
+            <div class="iconBox">
+                <i class="fas fa-shopping-cart"></i>
+            </div>
+        </div>
+        <div class="card">
+            <div>
+                <div class="number">@ViewBag.FeedbackCount</div>
+                <div class="cardName">Phản hồi</div>
+            </div>
+            <div class="iconBox">
+                <i class="fas fa-comments"></i>
+            </div>
+        </div>
+
+        <div class="card">
+            <div>
+                <div class="number">@Html.FormatValue(@ViewBag.TotalIncome, "{0:#,##0}") VNĐ</div>
+                <div class="cardName">Tổng thu nhập</div>
+            </div>
+            <div class="iconBox">
+                <i class="fas fa-coins"></i>
+            </div>
+        </div>
+    </div>
+    <div class="details">
+        <div class="recentOrders">
+            <div class="cardHeader">
+                <h2>Đơn hàng gần đây</h2>
+                <a href="#" class="btn">Xem tất cả</a>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <td>Tên sản phẩm</td>
+                        <td>Ngày đặt</td>
+                        <td>Giá</td>
+                        <td>Trạng thái</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.RecentOrders)
+                    {
+                        <tr>
+                            <td>@item.SANPHAM.TENSP</td>
+                            <td>@Html.DisplayFor(modelItem => item.NGAYDAT)</td>
+                            <td>@String.Format("{0:#,##0} VNĐ", item.GIA)</td>
+                            <td>
+                                <span class="status
+                                @(item.TRANGTHAIDH == "Delivered" ? "delivered" :
+                                  item.TRANGTHAIDH == "Đang giao hàng" ? "in-progress" :
+                                  item.TRANGTHAIDH == "Pending" ? "pending" :
+                                  item.TRANGTHAIDH == "Canceled" ? "canceled" : "")">
+                                    @item.TRANGTHAIDH
+                                </span>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="recentCustomers">
+            <div class="cardHeader">
+                <h2>Người dùng gần đây</h2>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <td>Tên khách hàng</td>
+                        <td>Địa chỉ</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.RecentCustomers)
+                    {
+                        <tr>
+                            <td>@item.HOTEN</td>
+                            <td>
+                                <span>
+                                    @if (!string.IsNullOrEmpty(item.DIACHI))
+                                    {
+                                        var city = item.DIACHI.Split(',').LastOrDefault(); // Extract the last part after the last comma
+                                        @city
+                                    }
+                                </span>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
