@@ -38,13 +38,13 @@ p {
     margin: 15px 0 20px 0;
 }
 
-.section-p1 {
+/*.section-p1 {
     padding: 40px 80px;
 }
 
 .section-m1 {
     margin: 40px 0;
-}
+}*/
 
 button.normal {
     font-size: 14px;
@@ -68,19 +68,17 @@ body {
     width: 100%;
 }
 
-#header {
+/*#header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 20px 80px;
     background: #e3e6f3;
-
     z-index: 999;
     position: sticky;
     top: 0;
     left: 0;
-}
-
+}*/
     /*header*/
     #header .logo {
         font-size: 2rem;
@@ -90,7 +88,7 @@ body {
             color: blue;
         }
 
-#navbar {
+/*#navbar {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -108,9 +106,9 @@ body {
             font-weight: 600;
             color: #1a1a1a;
             transition: 0.3s ease;
-        }
+        }*/
 
-            #navbar li a:hover, #navbar li a:active {
+            /*#navbar li a:hover, #navbar li a:active {
                 color: #088178;
             }
 
@@ -122,7 +120,7 @@ body {
                     position: absolute;
                     bottom: -4px;
                     left: 20px;
-                }
+                }*/
 
 #mobile {
     display: none;
@@ -996,7 +994,7 @@ footer {
 
 
 /* search bar */
-#header .timkiem {
+/*#header .timkiem {
     top: 110%;
     width: 50rem;
     height: 4.5rem;
@@ -1024,7 +1022,7 @@ footer {
         color: var(--black);
         cursor: pointer;
     }
-
+*/
 
     /* login*/
 .login-container {
@@ -1231,4 +1229,116 @@ footer {
 #registerForm p {
     text-align: center;
     margin-top: 10px;
+}
+#header {
+    background-color: #f8f9fa;
+    padding: 10px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Căn đều các phần tử */
+    align-items: center;
+    padding: 10px 0;
+}
+
+.navbar-brand {
+    font-size: 20px;
+    font-weight: bold;
+    color: #007bff;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.form-control {
+    width: 500px; /* Tăng chiều dài của thanh tìm kiếm */
+    height: 38px;
+    border-radius: 15px;
+    font-size: 14px;
+}
+
+.btn-outline-success {
+    height: 38px;
+    border-radius: 15px;
+    font-size: 14px;
+}
+
+.navbar-nav {
+    display: flex;
+    justify-content: space-around; /* Cách đều các mục trong navbar */
+    width: 400px; /* Tùy chỉnh độ rộng để có khoảng cách hợp lý */
+    margin-left: auto; /* Aligns menu to the right */
+}
+
+.dropdown-menu {
+    font-size: 14px;
+}
+.navbar-nav .nav-link {
+    font-size: 18px; /* Tăng kích thước chữ */
+    font-weight: bold; /* Nếu muốn chữ đậm hơn */
+    color: #333; /* Màu chữ */
+    padding-top: 5px; /* Giảm padding-top */
+    padding-bottom: 5px; /* Giảm padding-bottom */
+    padding-right: 10px;
+}
+
+    .navbar-nav .nav-link:hover {
+        color: #007bff; /* Đổi màu chữ khi hover */
+    }
+/* Giảm khoảng cách trên và dưới cho thanh tìm kiếm */
+.form-inline {
+    margin-bottom: 0; /* Đặt margin-bottom thành 0 */
+}
+
+/* Giảm khoảng cách cho các mục navbar */
+.navbar-nav {
+    margin-top: 0; /* Đặt margin-top thành 0 */
+}
+/* Logo */
+.navbar-brand {
+    flex-grow: 1;
+    text-align: left;
+}
+
+/* Form tìm kiếm */
+form.search-form {
+    flex-grow: 2; /* Làm cho form chiếm nhiều không gian hơn */
+    max-width: 600px; /* Giới hạn chiều rộng */
+    margin: 0 auto; /* Căn giữa form */
+}
+
+/* Menu điều hướng */
+.navbar-nav {
+    flex-grow: 1;
+    justify-content: flex-end; /* Đẩy các mục điều hướng sang phải */
+}
+#lg-bag i {
+    font-size: 1.8rem; /* Tăng kích thước của biểu tượng */
+
+}
+
+/* Căn chỉnh giỏ hàng với các phần khác */
+#lg-bag {
+    display: flex;
+    align-items: center;
+
+}
+
+.nav-item {
+    padding-left: 10px; /* Khoảng cách giữa các mục menu */
+}
+#lg-bag a {
+    font-size: 1.5rem; /* Tăng kích thước chữ cho thẻ <a> */
+    font-weight: bold; /* Tùy chọn: làm chữ đậm hơn */
+    color: #333; /* Thay đổi màu chữ nếu muốn */
+    padding: 5px; /* Thêm khoảng đệm để dễ nhìn */
+    text-decoration: none; /* Loại bỏ gạch chân nếu có */
+}
+
+    #lg-bag a:hover {
+        color: #007bff; /* Màu khi hover nếu cần */
+    }
+.text-danger {
+    font-size: 20   px !important; /* Sử dụng !important để đảm bảo thay đổi được áp dụng */
 }

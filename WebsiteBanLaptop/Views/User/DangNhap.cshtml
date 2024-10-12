@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewBag.Title = "Login";
+    ViewBag.Title = "DangNhap";
     Layout = "~/Views/Shared/_LayoutIndex.cshtml";
 }
 
@@ -15,7 +15,7 @@
     <div class="login-box">
         <h2>Đăng nhập</h2>
         @using (Html.BeginForm("DangNhap", "User", FormMethod.Post))
-        {
+        {<span class="text-danger">@ViewBag.ThongBao</span>
             <div class="input-group">
                 @Html.TextBox("TenDN", null, new { @placeholder = "Tên đăng nhập" })
                 <span class="text-danger">@ViewData["Err1"]</span>
@@ -35,4 +35,5 @@
             </button>
         </div>
     </div>
+</div>
 

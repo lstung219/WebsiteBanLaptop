@@ -15,15 +15,20 @@ namespace WebsiteBanLaptop.Controllers
         {
             return db.SANPHAMs.OrderByDescending(a => a.SLBAN).Take(count).ToList();
         }
+        private List<SANPHAM> LaySPMoi(int count)
+        {
+            return db.SANPHAMs.OrderByDescending(a => a.THOIGIAN).Take(count).ToList();
+        }
         public ActionResult Index()
         {
             var listSachBanNhieu = LayBanNhieu(8);
             return View(listSachBanNhieu);
         }
-        //private List<SANPHAM> LaySachMoi(int count)
-        //{
-        //    return db.SANPHAMs.OrderByDescending(a => a.NgayCapNhat).Take(count).ToList();
-        //}
+        public ActionResult PartialSPMoi()
+        {
+            var listSPMoi = LaySPMoi(8);
+            return PartialView(listSPMoi);
+        }
 
         public ActionResult Product(int? page)
         {

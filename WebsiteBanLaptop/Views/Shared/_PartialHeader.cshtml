@@ -1,23 +1,63 @@
 ﻿<section id="header">
-    <a href="@Url.Action("Index", "Laptop")" class="logo"><i class="fas fa-laptop-alt"></i> LAPTOP Store </a>
-    <form action="" class="timkiem">
-        <input type="search" id="search-item" placeholder="Tìm kiếm sản phẩm" onkeyup="search()">
-        <label for="search" class="fas fa-search"></label>
-    </form>
-    <div>
-        <ul id="navbar">
-            <li><a href="@Url.Action("Index", "Laptop")">Trang chủ</a></li>
-            <li><a href="@Url.Action("Product", "Laptop")">Sản phẩm</a></li>
-            <li><a href="@Url.Action("About", "Laptop")">About</a></li>
-            <li><a href="@Url.Action("Contact", "Laptop")">Contact</a></li>
-            <li id="lg-bag"><a href="@Url.Action("Cart", "Laptop")"><i class="fas fa-shopping-cart"></i></a></li>
-            <li><a href="@Url.Action("Login", "Laptop")">Đăng nhập/Đăng kí</a></li>
-            <a href="#" id="close"><i class="far fa-times"></i></a>
-        </ul>
-    </div>
-    <div id="mobile">
-        <a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
-        <i id="bar" class="fas fa-outdent"></i>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+            <!-- Logo -->
+            <a class="navbar-brand" href="@Url.Action("Index", "Laptop")">
+                <i class="fas fa-laptop-alt"></i> LAPTOP Store
+            </a>
 
-    </div>
+            <!-- Tìm kiếm -->
+            <form class="d-flex search-form" action="">
+                <input class="form-control me-2" type="search" id="search-item" placeholder="Tìm kiếm sản phẩm" onkeyup="search()">
+                <button class="btn btn-outline-success" type="submit"><i class="fas fa-search"></i></button>
+            </form>
+
+            <!-- Navbar links -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Index", "Laptop")">Trang chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Product", "Laptop")">Sản phẩm</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("About", "Laptop")">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Contact", "Laptop")">Contact</a>
+                    </li>
+                    <li id="lg-bag" class="nav-item">
+                        @Html.Action("GioHangPartial", "GioHang")
+                    </li>
+
+                    <!-- Tài khoản người dùng -->
+                    @if (Session["TaiKhoan"] != null)
+                    {
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                @Session["TenKH"]
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="userDropdown">
+                                <li><a class="dropdown-item" href="@Url.Action("Logout", "User")">Đăng xuất</a></li>
+                            </ul>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="guestDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Người dùng
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="guestDropdown">
+                                <li><a class="dropdown-item" href="~/User/DangKy">Đăng ký</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="~/User/DangNhap">Đăng nhập</a></li>
+                            </ul>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </nav>
 </section>

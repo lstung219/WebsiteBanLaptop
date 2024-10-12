@@ -18,7 +18,7 @@
                     <h5><a href="@Url.Action("ChiTietSP","Laptop", new { id =item.MASP})">@item.TENSP</a></h5>
                     <h4>@Html.FormatValue(item.GIA, "{0:#,##0}") VNĐ</h4>
                 </div>
-                <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+                <a href="@Url.Action("ThemGioHang", "GioHang", new { id = item.MASP, redirectUrl = Request.Url.ToString() })"><i class="fal fa-shopping-cart cart"></i></a>
             </div>
         }
 

@@ -130,8 +130,10 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\QuanLyController.cs" />
+    <Compile Include="Controllers\GioHangController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LaptopController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -914,6 +916,7 @@
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\StyleSheet1.css" />
     <Content Include="favicon.ico" />
+    <Content Include="FormMail\DangKi.html" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="img\about\1.webp" />
@@ -1125,6 +1128,11 @@
     <Content Include="Views\Laptop\Login.cshtml" />
     <Content Include="Views\Laptop\Register.cshtml" />
     <Content Include="Views\Laptop\ChiTietSP.cshtml" />
+    <Content Include="Views\GioHang\GioHangPartial.cshtml" />
+    <Content Include="Views\GioHang\GioHang.cshtml" />
+    <Content Include="Views\User\DangNhap.cshtml" />
+    <Content Include="Views\Shared\PartialSPMoi.cshtml" />
+    <Content Include="Views\User\DangKy.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

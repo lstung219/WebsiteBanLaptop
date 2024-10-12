@@ -3,6 +3,12 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutIndex.cshtml";
 }
+@if (ViewBag.DKTC != null && Session["TaiKhoan"] != null)
+{
+    <div class="alert alert-success">
+        @ViewBag.DKTC
+    </div>
+}
 <section id="hero">
     <h4><i class="fas fa-laptop-alt"></i> LAPTOP STORE </h4>
     <h2></h2>
@@ -49,7 +55,7 @@
                     <h5><a href="@Url.Action("ChiTietSP","Laptop", new { id =item.MASP})">@item.TENSP</a></h5>
                     <h4>@Html.FormatValue(item.GIA, "{0:#,##0}") VNĐ</h4>
                 </div>
-                <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+                <a href="@Url.Action("ThemGioHang", "GioHang", new { id = item.MASP, redirectUrl = Request.Url.ToString() })"><i class="fal fa-shopping-cart cart"></i></a>
             </div>
         }
 
@@ -62,88 +68,5 @@
     <button class="normal">Xem Thêm</button>
 </section>
 
-<section id="product1" class="section-p1">
-    <h2>SẢN PHẨM MỚI</h2>
-    <p>Sản phẩm chính hảng, đổi trả trong vòng 7 ngày</p>
-    <div class="pro_container">
-        <div class="pro">
-            <img src="~/img/products/lap13.png" alt="">
-            <div class="des">
-                <span>ASUS</span>
-                <h5>Laptop ASUS Gaming VivoBook K3605ZF-RP634W</h5>
-                <h4>17.990.000vnđ</h4>
-            </div>
-            <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-        </div>
 
-        <div class="pro">
-            <img src="~/img/products/lap14.png" alt="">
-            <div class="des">
-                <span>MSI</span>
-                <h5>Laptop MSI Gaming Thin 15 B13UC-2081VN</h5>
-                <h4>18.490.000vnđ</h4>
-            </div>
-            <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-        </div>
-
-        <div class="pro">
-            <img src="~/img/products/lap15.png" alt="">
-            <div class="des">
-                <span>ASUS</span>
-                <h5>Laptop ASUS Vivobook 15 X1504ZA-NJ517W</h5>
-                <h4>14.490.000vnđ</h4>
-            </div>
-            <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-        </div>
-
-        <div class="pro">
-            <img src="~/img/products/lap16.png" alt="">
-            <div class="des">
-                <span>Acer</span>
-                <h5>Laptop Acer Aspire 7 A715-76G-5806</h5>
-                <h4>18.990.000vnđ</h4>
-            </div>
-            <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-        </div>
-
-        <div class="pro">
-            <img src="~/img/products/lap17.png" alt="">
-            <div class="des">
-                <span>MacBook</span>
-                <h5>Apple MacBook Air M2 2022 16GB 512GB I Chính hãng Apple Việt Nam</h5>
-                <h4>33.590.000vnđ</h4>
-            </div>
-            <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-        </div>
-
-        <div class="pro">
-            <img src="~/img/products/lap9.png" alt="">
-            <div class="des">
-                <span>MSI</span>
-                <h5>Laptop MSI Gaming Thin 15 B12UCX-1419VN</h5>
-                <h4>15.490.000vnđ</h4>
-            </div>
-            <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-        </div>
-        <div class="pro">
-            <img src="~/img/products/lap10.png" alt="">
-            <div class="des">
-                <span>Lenovo</span>
-                <h5>Laptop Lenovo IdeaPad Slim 3 14IAH8 83EQ0005VN</h5>
-                <h4>14.490.000vnđ</h4>
-            </div>
-            <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-        </div>
-
-        <div class="pro">
-            <img src="~/img/products/lap11.png" alt="">
-            <div class="des">
-                <span>HP</span>
-                <h5>Laptop HP Pavilion 15-EG3111TU 8U6L8PA</h5>
-                <h4>17.690.000vnđ</h4>
-            </div>
-            <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-        </div>
-
-    </div>
-</section>
+@Html.Action("PartialSPMoi", "Laptop")

@@ -1,0 +1,20 @@
+﻿@model IEnumerable<WebsiteBanLaptop.Models.SANPHAM>
+<section id="product1" class="section-p1">
+    <h2>SẢN PHẨM MỚI</h2>
+    <p>Sản phẩm chính hảng, đổi trả trong vòng 7 ngày</p>
+    <div class="pro_container">
+            @foreach (var item in Model)
+            {
+                <div class="pro">
+                    <img src="~/img/products/@item.HINHANH" alt="">
+                    <div class="des">
+                        <span>@item.THUONGHIEU.TENTH</span>
+                        <h5><a href="@Url.Action("ChiTietSP","Laptop", new { id =item.MASP})">@item.TENSP</a></h5>
+                        <h4>@Html.FormatValue(item.GIA, "{0:#,##0}") VNĐ</h4>
+                    </div>
+                    <a href="@Url.Action("ThemGioHang", "GioHang", new { id = item.MASP, redirectUrl = Request.Url.ToString() })"><i class="fal fa-shopping-cart cart"></i></a>
+                </div>
+            }
+
+    </div>
+</section>

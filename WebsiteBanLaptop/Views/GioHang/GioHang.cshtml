@@ -1,0 +1,74 @@
+﻿@using WebsiteBanLaptop.Models
+@model List<GIOHANG.GioHang>
+@{
+    ViewBag.Title = "GioHang";
+    Layout = "~/Views/Shared/_LayoutIndex.cshtml";
+}
+
+<section id="cart" class="section-p1">
+    <table width="100%">
+        <thead>
+            <tr>
+                <td>Hình Ảnh</td>
+                <td>Sản Phẩm</td>
+                <td>Giá</td>
+                <td>Số Lượng</td>
+                <td>Tổng</td>
+                <td>Xóa</td>
+                <td>Cập Nhật</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td><img src="~/img/products/@item.HINHANH"></td>
+                    <td><a href="@Url.Action("ChiTietSP","Laptop", new { id =item.MASP})">@item.TENSP</a></td>
+                    @using (Html.BeginForm("CapNhatGioHang", "GioHang", new { masp = item.MASP }, FormMethod.Post))
+                    {
+                        <td>@string.Format("{0:#,##0,0}", item.GIA)</td>
+                        <td>
+                            <input type="number" min="1" name="txtSoLuong" value="@item.iSoLuong" class="form-control" @*style="background-color:#f4ff94;"*@ />
+                        </td>
+
+                        <td>@string.Format("{0:#,##0,0}", item.dThanhTien)</td>
+                        <td>
+                            @Html.ActionLink("Xóa", "XoaSanPham", new { masp = item.MASP })
+                        </td>
+                        <td>
+                            <button type="submit" class="btn btn-primary">Cập nhật</button>
+                        </td>
+                    }
+                </tr>
+            }
+        </tbody>
+    </table>
+</section>
+
+<section id="cart-add" class="section-p1">
+    <div id="coupon">
+        <h3>Mã giảm giá</h3>
+        <input type="text" placeholder="Nhập Mã Giảm Giá">
+        <button class="normal">Nhập</button>
+    </div>
+    <div id="subtotal">
+        <h3>Tổng tiền giỏ hàng</h3>
+        <table>
+            <tr>
+                <td>Tổng Cộng</td>
+                <td>@string.Format("{0:#,##0}", @ViewBag.TongTien) vnđ</td>
+            </tr>
+            <tr>
+                <td>Shipping</td>
+                <td>Free</td>
+            </tr>
+            <tr>
+                <td><b>Tổng Tiền</b></td>
+                <td><b>@string.Format("{0:#,##0}", @ViewBag.TongTien) vnđ</b></td>
+            </tr>
+            
+        </table>
+        <button class="normal">Thanh Toán</button>
+    </div>
+</section>
+

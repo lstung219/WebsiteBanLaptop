@@ -11,7 +11,8 @@ namespace WebsiteBanLaptop.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Linq;
+
     public partial class GIOHANG
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -26,5 +27,32 @@ namespace WebsiteBanLaptop.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CTGIOHANG> CTGIOHANGs { get; set; }
         public virtual KHACHHANG KHACHHANG { get; set; }
+        public class GioHang
+        {
+            public int MASP { get; set; }
+            public string TENSP { get; set; }
+            public string HINHANH { get; set; }
+            public double GIA { get; set; }
+            public int iSoLuong { get; set; }
+
+            // Calculate total price based on the quantity and product price
+            public double dThanhTien { get { return this.iSoLuong * this.GIA; } }
+
+            public GioHang(int masp)
+            {
+                using (var db = new db_LAPTOPSTORESEntities())  // Replace with your actual DbContext name
+                {
+                    MASP = masp;
+                    var sp = db.SANPHAMs.SingleOrDefault(s => s.MASP == MASP);
+                    if (sp != null)
+                    {
+                        TENSP = sp.TENSP;
+                        HINHANH = sp.HINHANH;
+                        GIA = sp.GIA.HasValue ? sp.GIA.Value : 0;
+                        iSoLuong = 1;
+                    }
+                }
+            }
+        }
     }
 }
